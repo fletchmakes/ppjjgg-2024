@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=2 format=3 uid="uid://ckhmm36sa88xv"]
 
-[node name="Main" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://crwdc36s2xtnn" path="res://icon.svg" id="1_6eu03"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_6eu03")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.04933)
+fov = 88.6602
+
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+
+[node name="BlurBackground" type="ColorRect" parent="DialogueLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 435
+
+[node name="DialogueBackground" type="ColorRect" parent="DialogueLayer/MarginContainer"]
+layout_mode = 2
+color = Color(0.970317, 0.899298, 0.778755, 1)
