@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var DialogueUI = $DialogueUI;
 @onready var DialogueText = $DialogueUI/MarginContainer/CenterContainer/RichTextLabel;
+@onready var DialogueNextIndicator = $DialogueUI/MarginContainer/AspectRatioContainer/NextArrow;
 
 var display_state = "hidden";
 var text_state = "ready";
@@ -10,9 +11,15 @@ var text_speed = 0.5;
 
 func _ready():
 	DialogueManager.DIALOGUE_LAYER = self;
-	DialogueManager.OpenDialogueAndPauseGame([0, 1, 2]);
-	
+
 func _process(delta):
+	# next arrow indicator
+	if (self.can_read_next_passage()):
+		DialogueNextIndicator.show();
+	else:
+		DialogueNextIndicator.hide();
+	
+	# animating the dialogue window in and out
 	if (display_state == "hiding"):
 		var current_modulate: Color = DialogueUI.get_modulate();
 		var current_alpha = current_modulate.a;
@@ -35,6 +42,7 @@ func _process(delta):
 		else:
 			DialogueUI.set_modulate(Color(current_modulate.r, current_modulate.g, current_modulate.b, next_alpha));
 
+	# animating the text
 	if (self.text_state == "animating" and self.display_state == "shown"):
 		DialogueText.visible_ratio += 0.05 * text_speed;
 		if (DialogueText.visible_ratio >= 1.0):
