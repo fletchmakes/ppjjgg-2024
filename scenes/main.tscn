@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=5 format=3 uid="uid://ckhmm36sa88xv"]
 
 [ext_resource type="Texture2D" uid="uid://crwdc36s2xtnn" path="res://icon.svg" id="1_6eu03"]
 [ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="2_jnc8c"]
 [ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
+[ext_resource type="Texture2D" uid="uid://df0tf4gju8cyr" path="res://art/icons/down_arrow.png" id="4_6trlw"]
 
 [node name="Main" type="Node3D"]
 
@@ -46,18 +47,20 @@ theme_override_constants/margin_top = 435
 layout_mode = 2
 color = Color(0.970317, 0.899298, 0.778755, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="DialogueLayer/DialogueUI/MarginContainer/DialogueBackground"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CenterContainer" type="CenterContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
+layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueLayer/DialogueUI/MarginContainer/DialogueBackground/CenterContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueLayer/DialogueUI/MarginContainer/CenterContainer"]
 layout_mode = 2
 theme = ExtResource("2_jnc8c")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "example dialogue"
 fit_content = true
 autowrap_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="DialogueLayer/DialogueUI/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("4_6trlw")
+stretch_mode = 2

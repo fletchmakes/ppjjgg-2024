@@ -1,23 +1,28 @@
 extends Node
 
 var current_passage: PackedInt32Array = [];
-var cursor: int = 0;
+var cursor: int = -1; # -1 means that we don't have any dialogue loaded to be shown i.e. dialogue is hidden
 
 var DIALOGUE_LAYER: CanvasLayer = null;
 
 func OpenDialogueAndPauseGame(text_indices: PackedInt32Array):
 	current_passage = text_indices;
 	cursor = 0;
-	# TODO: show the dialogue overlay & pause gameplay
-	# TODO: print the first passage onto the screen
-	# TODO: only DialogueManager can receive input events
-	NextPassage();
+	DIALOGUE_LAYER.show_dialogue_ui(AllTheText.RESOURCES[current_passage[cursor]]);
 	
 func NextPassage():
-	cursor += 1;
-	if (cursor >= current_passage.size()):
-		# TODO: close the dialogue and return control to the game
-		pass;
+	# all done reading, back to gameplay
+	if (cursor + 1 >= current_passage.size() and DIALOGUE_LAYER.can_read_next_passage()):
+		DIALOGUE_LAYER.hide_dialogue_ui();
+		cursor = -1;
+	# if the text is done animating
+	elif (DIALOGUE_LAYER.can_read_next_passage()):
+		cursor += 1;
+		DIALOGUE_LAYER.next_passage(AllTheText.RESOURCES[current_passage[cursor]]);
+	# move onto the next animation
 	else:
-		# TODO: animate out the current dialogue and animate in the next
-		pass;
+		DIALOGUE_LAYER.skip_text_animation();
+
+func _process(delta):
+	if (Input.is_action_just_pressed("ui_advance_dialogue") and cursor != -1):
+		NextPassage();
