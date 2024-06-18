@@ -11,6 +11,7 @@ var text_speed = 0.5;
 
 func _ready():
 	DialogueManager.DIALOGUE_LAYER = self;
+	hide_dialogue_ui();
 
 func _process(delta):
 	# next arrow indicator
@@ -51,12 +52,14 @@ func _process(delta):
 
 func hide_dialogue_ui():
 	self.display_state = "hiding";
+	DialogueUI.mouse_filter = 2; # MOUSE_FILTER_IGNORE
 	
 func show_dialogue_ui(text: String):
 	self.display_state = "showing";
 	DialogueText.text = text;
 	DialogueText.visible_ratio = 0.0;
 	self.text_state = "animating";
+	DialogueUI.mouse_filter = 0; # MOUSE_FILTER_STOP
 	
 # returns whether or not we successfully made it to the next passage
 func next_passage(text: String):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8tp15sbllykq"
-path="res://.godot/imported/dialogue-texture.png-c54ddc2d2c3a7e4f78fabcfda8c68a56.ctex"
+uid="uid://cbp0pappjt6kk"
+path="res://.godot/imported/home-button-unpressed.png-da3b351a4921093383dfecf93801a31a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/ui/dialogue-texture.png"
-dest_files=["res://.godot/imported/dialogue-texture.png-c54ddc2d2c3a7e4f78fabcfda8c68a56.ctex"]
+source_file="res://art/ui/home-button-unpressed.png"
+dest_files=["res://.godot/imported/home-button-unpressed.png-da3b351a4921093383dfecf93801a31a.ctex"]
 
 [params]
 
