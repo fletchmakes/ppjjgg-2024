@@ -3,6 +3,8 @@ extends Node
 var current_passage: PackedInt32Array = [];
 var cursor: int = 0;
 
+var DIALOGUE_LAYER: CanvasLayer = null;
+
 func OpenDialogueAndPauseGame(text_indices: PackedInt32Array):
 	current_passage = text_indices;
 	cursor = 0;
