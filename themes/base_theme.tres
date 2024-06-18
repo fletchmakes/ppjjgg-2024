@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://d3xosdr8aarps"]
 
-[ext_resource type="FontFile" uid="uid://cdtdfytbdpop1" path="res://fonts/OpenDyslexic3-Regular.ttf" id="1_qyj70"]
+[ext_resource type="FontFile" uid="uid://c7lac6oghwpv8" path="res://fonts/PlaypenSans-VariableFont_wght.ttf" id="1_dr0d6"]
 
 [resource]
-default_font = ExtResource("1_qyj70")
+default_font = ExtResource("1_dr0d6")
 default_font_size = 24

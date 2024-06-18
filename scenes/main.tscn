@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crwdc36s2xtnn" path="res://icon.svg" id="1_6eu03"]
 [ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="2_jnc8c"]
 [ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
-[ext_resource type="Texture2D" uid="uid://c8tp15sbllykq" path="res://art/ui/dialogue-texture.png" id="3_rtwkn"]
+[ext_resource type="Texture2D" uid="uid://c7ip60epea0im" path="res://art/ui/dialogue-bg-nines.png" id="3_nua7k"]
 [ext_resource type="Texture2D" uid="uid://df0tf4gju8cyr" path="res://art/icons/down_arrow.png" id="4_6trlw"]
 [ext_resource type="Shader" path="res://themes/up-and-down.gdshader" id="5_fvq0p"]
 
@@ -30,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BlurBackground" type="ColorRect" parent="DialogueLayer/DialogueUI"]
 layout_mode = 1
@@ -51,11 +52,13 @@ theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 435
 theme_override_constants/margin_right = 100
 
-[node name="DialogueBackground" type="TextureRect" parent="DialogueLayer/DialogueUI/MarginContainer"]
+[node name="DialogueBackground" type="NinePatchRect" parent="DialogueLayer/DialogueUI/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("3_rtwkn")
-expand_mode = 1
-stretch_mode = 1
+texture = ExtResource("3_nua7k")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [node name="CenterContainer" type="CenterContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
 layout_mode = 2
