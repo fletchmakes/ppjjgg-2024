@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var DialogueUI = $DialogueUI;
-@onready var DialogueText = $DialogueUI/MarginContainer/DialogueBackground/CenterContainer/RichTextLabel;
+@onready var DialogueText = $DialogueUI/MarginContainer/CenterContainer/RichTextLabel;
 
 var display_state = "hidden";
 var text_state = "ready";
