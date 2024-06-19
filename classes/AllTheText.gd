@@ -15,5 +15,5 @@ static var RESOURCES: PackedStringArray = [
 	"she lived happily ever after",
 	
 	#interactable test
-	"yahaha! you found me!! :D"
+	"yahaha! you found me!! :D this is really long text to try and see what happens if the text is really long",
 ]

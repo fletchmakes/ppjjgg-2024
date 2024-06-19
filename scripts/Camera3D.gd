@@ -12,7 +12,6 @@ func _process(delta):
 
 #Highlights interactable objects when moused over
 func _on_interactable_mouse_entered():
-	print("highlight")
 	#show highlight outline
 	$"../Sprite3D/Interactable/MeshInstance3D/Outline".visible = true
 	Input.set_custom_mouse_cursor(cursor_interactable,Input.CURSOR_ARROW,Vector2(16, 16))
@@ -20,7 +19,6 @@ func _on_interactable_mouse_entered():
 
 #Unhighlights interactable objects when no longer moused over
 func _on_interactable_mouse_exited():
-	print("unhighlight")
 	#hide highlight outline
 	$"../Sprite3D/Interactable/MeshInstance3D/Outline".visible = false
 	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(16, 16))
@@ -30,5 +28,5 @@ func _on_interactable_mouse_exited():
 func _on_interactable_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(16, 16))
-		DialogueManager.OpenDialogueAndPauseGame([4])
+		DialogueManager.OpenDialogueAndPauseGame([4, 0, 2])
 
