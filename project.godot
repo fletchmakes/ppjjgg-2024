@@ -21,6 +21,7 @@ DialogueManager="*res://scripts/DialogueManager.gd"
 
 [display]
 
+window/size/resizable=false
 mouse_cursor/custom_image="res://art/cursors/hand_thin_small_point.png"
 
 [input]

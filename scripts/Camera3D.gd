@@ -29,4 +29,3 @@ func _on_interactable_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(16, 16))
 		DialogueManager.OpenDialogueAndPauseGame([4, 0, 2])
-
