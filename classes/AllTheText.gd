@@ -13,4 +13,7 @@ static var RESOURCES: PackedStringArray = [
 	
 	# epilogue
 	"she lived happily ever after",
+	
+	#interactable test
+	"yahaha! you found me!! :D"
 ]

@@ -1,11 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=10 format=3 uid="uid://ckhmm36sa88xv"]
 
-[ext_resource type="Texture2D" uid="uid://crwdc36s2xtnn" path="res://icon.svg" id="1_6eu03"]
+[ext_resource type="PackedScene" uid="uid://bvw0ypa3tkwga" path="res://scenes/interactable.tscn" id="2_e4gkq"]
 [ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="2_jnc8c"]
 [ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
+[ext_resource type="Script" path="res://scripts/Camera3D.gd" id="3_0qm8k"]
 [ext_resource type="Texture2D" uid="uid://c7ip60epea0im" path="res://art/ui/dialogue-bg-nines.png" id="3_nua7k"]
 [ext_resource type="Texture2D" uid="uid://df0tf4gju8cyr" path="res://art/icons/down_arrow.png" id="4_6trlw"]
 [ext_resource type="Shader" path="res://themes/up-and-down.gdshader" id="5_fvq0p"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_jfkdy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bs0le"]
 shader = ExtResource("5_fvq0p")
@@ -13,11 +16,19 @@ shader = ExtResource("5_fvq0p")
 [node name="Main" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_6eu03")
+texture = SubResource("ImageTexture_jfkdy")
+
+[node name="Interactable" parent="Sprite3D" instance=ExtResource("2_e4gkq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.547072)
+
+[node name="Outline" parent="Sprite3D/Interactable/MeshInstance3D" index="0"]
+gi_mode = 0
+gi_lightmap_scale = 2
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.04933)
 fov = 88.6602
+script = ExtResource("3_0qm8k")
 
 [node name="DialogueLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_uga1u")
@@ -84,3 +95,12 @@ material = SubResource("ShaderMaterial_bs0le")
 layout_mode = 2
 texture = ExtResource("4_6trlw")
 expand_mode = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.18036)
+
+[connection signal="input_event" from="Sprite3D/Interactable" to="Camera3D" method="_on_interactable_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Interactable" to="Camera3D" method="_on_interactable_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Interactable" to="Camera3D" method="_on_interactable_mouse_exited"]
+
+[editable path="Sprite3D/Interactable"]
