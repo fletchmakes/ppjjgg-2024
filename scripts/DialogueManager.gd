@@ -20,9 +20,18 @@ func NextPassage():
 		cursor += 1;
 		DIALOGUE_LAYER.next_passage(AllTheText.RESOURCES[current_passage[cursor]]);
 	# move onto the next animation
-	else:
+	elif (DIALOGUE_LAYER.is_dialogue_shown()):
+		DIALOGUE_LAYER.skip_text_animation();
+		
+func PreviousPassage():
+	if (cursor - 1 >= 0 and DIALOGUE_LAYER.can_read_next_passage()):
+		cursor -= 1;
+		DIALOGUE_LAYER.next_passage(AllTheText.RESOURCES[current_passage[cursor]]);
+	elif (DIALOGUE_LAYER.is_dialogue_shown()):
 		DIALOGUE_LAYER.skip_text_animation();
 
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_advance_dialogue") and cursor != -1):
 		NextPassage();
+	if (Input.is_action_just_pressed("ui_previous_dialogue") and cursor != -1):
+		PreviousPassage();

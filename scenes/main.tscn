@@ -22,6 +22,7 @@ texture = SubResource("ImageTexture_jfkdy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.547072)
 
 [node name="Outline" parent="Sprite3D/Interactable/MeshInstance3D" index="0"]
+visible = true
 gi_mode = 0
 gi_lightmap_scale = 2
 
@@ -32,6 +33,7 @@ script = ExtResource("3_0qm8k")
 
 [node name="DialogueLayer" type="CanvasLayer" parent="."]
 script = ExtResource("2_uga1u")
+text_speed = 0.05
 
 [node name="DialogueUI" type="Control" parent="DialogueLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -71,17 +73,6 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
-[node name="CenterContainer" type="CenterContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueLayer/DialogueUI/MarginContainer/CenterContainer"]
-layout_mode = 2
-theme = ExtResource("2_jnc8c")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "example dialogue"
-fit_content = true
-autowrap_mode = 0
-
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -95,6 +86,22 @@ material = SubResource("ShaderMaterial_bs0le")
 layout_mode = 2
 texture = ExtResource("4_6trlw")
 expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueLayer/DialogueUI/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_jnc8c")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "example dialogue"
+fit_content = true
+autowrap_mode = 2
+visible_characters_behavior = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.18036)
