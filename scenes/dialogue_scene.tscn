@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://kckhnjx3gg0o"]
+
+[ext_resource type="Texture2D" uid="uid://c7ip60epea0im" path="res://art/ui/dialogue-bg-nines.png" id="1_0ymhq"]
+[ext_resource type="Shader" path="res://themes/up-and-down.gdshader" id="2_4bjbr"]
+[ext_resource type="Texture2D" uid="uid://df0tf4gju8cyr" path="res://art/icons/down_arrow.png" id="3_flt0p"]
+[ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="4_rcau4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bs0le"]
+shader = ExtResource("2_4bjbr")
+
+[node name="DialogueUI" type="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BlurBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 435
+theme_override_constants/margin_right = 100
+
+[node name="DialogueBackground" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_0ymhq")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment_horizontal = 2
+alignment_vertical = 2
+
+[node name="NextArrow" type="TextureRect" parent="MarginContainer/AspectRatioContainer"]
+material = SubResource("ShaderMaterial_bs0le")
+layout_mode = 2
+texture = ExtResource("3_flt0p")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("4_rcau4")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "example dialogue"
+fit_content = true
+autowrap_mode = 2
+visible_characters_behavior = 1

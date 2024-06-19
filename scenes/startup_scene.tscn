@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsberelpj75c1"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_fq0jm"]
+[ext_resource type="Texture2D" uid="uid://cl1pejodkacyg" path="res://art/misc/title-art.png" id="2_yh44b"]
+[ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="3_cmpxs"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fq0jm")
+
+[node name="BlurBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 85
+theme_override_constants/margin_bottom = 35
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TitleContainer"]
+layout_mode = 2
+
+[node name="TitleArt" type="TextureRect" parent="VBoxContainer/TitleContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_yh44b")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("3_cmpxs")
+text = "Play Game"
+
+[node name="BottomText" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 145
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/BottomText"]
+layout_mode = 2
+theme = ExtResource("3_cmpxs")
+theme_override_font_sizes/normal_font_size = 26
+text = "made by fable, ri, soren & fletch"
+fit_content = true
+autowrap_mode = 0
+
+[connection signal="pressed" from="VBoxContainer/CenterContainer/PlayButton" to="." method="_on_play_button_pressed"]

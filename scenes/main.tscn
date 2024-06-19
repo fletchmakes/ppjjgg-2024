@@ -1,17 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=7 format=3 uid="uid://ckhmm36sa88xv"]
 
 [ext_resource type="PackedScene" uid="uid://bvw0ypa3tkwga" path="res://scenes/interactable.tscn" id="2_e4gkq"]
-[ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="2_jnc8c"]
 [ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
 [ext_resource type="Script" path="res://scripts/Camera3D.gd" id="3_0qm8k"]
-[ext_resource type="Texture2D" uid="uid://c7ip60epea0im" path="res://art/ui/dialogue-bg-nines.png" id="3_nua7k"]
-[ext_resource type="Texture2D" uid="uid://df0tf4gju8cyr" path="res://art/icons/down_arrow.png" id="4_6trlw"]
-[ext_resource type="Shader" path="res://themes/up-and-down.gdshader" id="5_fvq0p"]
+[ext_resource type="PackedScene" uid="uid://kckhnjx3gg0o" path="res://scenes/dialogue_scene.tscn" id="4_lbbjr"]
+[ext_resource type="PackedScene" uid="uid://dsberelpj75c1" path="res://scenes/startup_scene.tscn" id="5_km7y5"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_jfkdy"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bs0le"]
-shader = ExtResource("5_fvq0p")
 
 [node name="Main" type="Node3D"]
 
@@ -35,73 +30,9 @@ script = ExtResource("3_0qm8k")
 script = ExtResource("2_uga1u")
 text_speed = 0.05
 
-[node name="DialogueUI" type="Control" parent="DialogueLayer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="DialogueUI" parent="DialogueLayer" instance=ExtResource("4_lbbjr")]
 
-[node name="BlurBackground" type="ColorRect" parent="DialogueLayer/DialogueUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.670588)
-
-[node name="MarginContainer" type="MarginContainer" parent="DialogueLayer/DialogueUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 435
-theme_override_constants/margin_right = 100
-
-[node name="DialogueBackground" type="NinePatchRect" parent="DialogueLayer/DialogueUI/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("3_nua7k")
-patch_margin_left = 32
-patch_margin_top = 32
-patch_margin_right = 32
-patch_margin_bottom = 32
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
-custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-alignment_horizontal = 2
-alignment_vertical = 2
-
-[node name="NextArrow" type="TextureRect" parent="DialogueLayer/DialogueUI/MarginContainer/AspectRatioContainer"]
-material = SubResource("ShaderMaterial_bs0le")
-layout_mode = 2
-texture = ExtResource("4_6trlw")
-expand_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="DialogueLayer/DialogueUI/MarginContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 10
-
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueLayer/DialogueUI/MarginContainer/MarginContainer"]
-layout_mode = 2
-theme = ExtResource("2_jnc8c")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "example dialogue"
-fit_content = true
-autowrap_mode = 2
-visible_characters_behavior = 1
+[node name="MainMenu" parent="DialogueLayer" instance=ExtResource("5_km7y5")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.18036)
