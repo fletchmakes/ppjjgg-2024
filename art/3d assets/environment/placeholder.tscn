@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnxtiehwwe2ob"]
+
+[ext_resource type="PackedScene" uid="uid://bhm6tor8o2vjp" path="res://art/3d assets/environment/room.gltf" id="1_k1k23"]
+
+[node name="room" instance=ExtResource("1_k1k23")]
