@@ -13,14 +13,14 @@ func _process(delta):
 #Highlights interactable objects when moused over
 func _on_interactable_mouse_entered():
 	#show highlight outline
-	$"../Sprite3D/Interactable/MeshInstance3D/Outline".visible = true
+	$"../../Sprite3D/Interactable/MeshInstance3D/Outline".visible = true
 	Input.set_custom_mouse_cursor(cursor_interactable,Input.CURSOR_ARROW,Vector2(16, 16))
 
 
 #Unhighlights interactable objects when no longer moused over
 func _on_interactable_mouse_exited():
 	#hide highlight outline
-	$"../Sprite3D/Interactable/MeshInstance3D/Outline".visible = false
+	$"../../Sprite3D/Interactable/MeshInstance3D/Outline".visible = false
 	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(16, 16))
 
 
