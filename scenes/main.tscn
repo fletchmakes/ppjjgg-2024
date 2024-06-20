@@ -22,14 +22,6 @@ texture = SubResource("ImageTexture_jfkdy")
 gi_mode = 0
 gi_lightmap_scale = 2
 
-[node name="DialogueLayer" type="CanvasLayer" parent="."]
-script = ExtResource("2_uga1u")
-text_speed = 0.05
-
-[node name="DialogueUI" parent="DialogueLayer" instance=ExtResource("4_lbbjr")]
-
-[node name="MainMenu" parent="DialogueLayer" instance=ExtResource("5_km7y5")]
-
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
 script = ExtResource("5_4vp4n")
@@ -58,6 +50,14 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.901299, 1.49729, -0.
 
 [node name="Object3" parent="Interactables" instance=ExtResource("2_e4gkq")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.21138, 0.122301, -1.11648)
+
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_uga1u")
+text_speed = 0.05
+
+[node name="DialogueUI" parent="DialogueLayer" instance=ExtResource("4_lbbjr")]
+
+[node name="MainMenu" parent="DialogueLayer" instance=ExtResource("5_km7y5")]
 
 [connection signal="input_event" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_input_event"]
 [connection signal="mouse_entered" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_mouse_entered"]

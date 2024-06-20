@@ -9,6 +9,7 @@ func _process(delta):
 		var current_alpha = current_modulate.a;
 		var next_alpha = lerp(current_alpha, 0.0, 0.1);
 		if (next_alpha - 0 < 0.05):
+			GameManager.ResetYawnTimer();
 			self.queue_free();
 		else:
 			self.set_modulate(Color(current_modulate.r, current_modulate.g, current_modulate.b, next_alpha));

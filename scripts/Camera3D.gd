@@ -45,7 +45,8 @@ func _on_interactable_mouse_exited():
 func _on_interactable_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(16, 16))
-		DialogueManager.OpenDialogueAndPauseGame([4, 0, 2])
+		DialogueManager.OpenDialogueAndPauseGame([4, 1, 2])
+		GameManager.ResetYawnTimer()
 		
 
 
@@ -62,6 +63,7 @@ func _on_object_1_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(16, 16))
 		DialogueManager.OpenDialogueAndPauseGame([5])
+		GameManager.ResetYawnTimer()
 
 #Signal connections for Object2
 func _on_object_2_mouse_entered():
@@ -76,6 +78,7 @@ func _on_object_2_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(16, 16))
 		DialogueManager.OpenDialogueAndPauseGame([6])
+		GameManager.ResetYawnTimer()
 
 #Signal connections for Object3
 func _on_object_3_mouse_entered():
@@ -90,3 +93,4 @@ func _on_object_3_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(16, 16))
 		DialogueManager.OpenDialogueAndPauseGame([7])
+		GameManager.ResetYawnTimer()
