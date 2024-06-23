@@ -3,6 +3,9 @@ extends CanvasLayer
 @onready var DialogueUI = $DialogueUI;
 @onready var DialogueText = $DialogueUI/MarginContainer/MarginContainer/RichTextLabel;
 @onready var DialogueNextIndicator = $DialogueUI/MarginContainer/AspectRatioContainer/NextArrow;
+@onready var sfx_dialogue_close = $SFXDialogueClose
+@onready var sfx_text = $SFXText
+
 
 var display_state = "hidden";
 var text_state = "ready";
@@ -10,9 +13,14 @@ var text_state = "ready";
 @export_range(0.01, 0.05) var text_speed: float = 0.01;
 var delta_accumulator: float = 0.0;
 
+#silly little hack so sfx doesn't play on startup but it will play all future
+#cases where dialogue is hidden
+var initial_hide := false
+
 func _ready():
 	DialogueManager.DIALOGUE_LAYER = self;
 	hide_dialogue_ui();
+	initial_hide = true
 
 func _process(delta):
 	# next arrow indicator
@@ -49,12 +57,15 @@ func _process(delta):
 		if (self.delta_accumulator >= text_speed):
 			self.delta_accumulator = 0.0;
 			DialogueText.visible_characters += 1;
+			sfx_text.play()
 		if (DialogueText.visible_characters == DialogueText.text.length()):
 			self.text_state = "ready";
 			DialogueText.visible_characters = -1;
 
 func hide_dialogue_ui():
 	self.display_state = "hiding";
+	if initial_hide == true:
+		sfx_dialogue_close.play()
 	
 func show_dialogue_ui(text: String):
 	DialogueUI.mouse_filter = 0; # MOUSE_FILTER_STOP

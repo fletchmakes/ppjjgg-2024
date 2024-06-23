@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgdixefq27un"]
+
+[ext_resource type="PackedScene" uid="uid://xv474mm6aq5n" path="res://art/3d assets/objects/glbs/water bottle plain.glb" id="1_6cmrv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8hwou"]
+height = 0.199465
+radius = 0.0492578
+
+[node name="water bottle plain" instance=ExtResource("1_6cmrv")]
+
+[node name="Interactable_waterbottle_plain" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_waterbottle_plain" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0283151, 0.734414, -0.818912)
+shape = SubResource("CylinderShape3D_8hwou")

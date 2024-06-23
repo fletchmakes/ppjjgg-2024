@@ -1,0 +1,70 @@
+[gd_scene load_steps=59 format=3 uid="uid://ckhmm36sa88xv"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_lacny"]
+[ext_resource type="PackedScene" uid="uid://bvw0ypa3tkwga" path="res://scenes/interactable.tscn" id="2_e4gkq"]
+[ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
+[ext_resource type="Script" path="res://scripts/Camera3D.gd" id="3_0qm8k"]
+[ext_resource type="PackedScene" uid="uid://kckhnjx3gg0o" path="res://scenes/dialogue_scene.tscn" id="4_lbbjr"]
+[ext_resource type="Script" path="res://scripts/Pivot.gd" id="5_4vp4n"]
+[ext_resource type="PackedScene" uid="uid://dsberelpj75c1" path="res://scenes/startup_scene.tscn" id="5_km7y5"]
+[ext_resource type="AudioStream" uid="uid://d3bxlb8r87u4k" path="res://audio/sfx/maximize_006.ogg" id="5_o4okj"]
+[ext_resource type="PackedScene" uid="uid://nkuhxk1nkj1b" path="res://scenes/objects/big_plant.tscn" id="5_st3ic"]
+[ext_resource type="PackedScene" uid="uid://dtv0y2rrrlaew" path="res://scenes/objects/journal_closed.tscn" id="6_k4fvu"]
+[ext_resource type="PackedScene" uid="uid://dkr1b7k0phdgh" path="res://scenes/objects/journal_open_2.tscn" id="7_swama"]
+[ext_resource type="PackedScene" uid="uid://dec4l7dp0gius" path="res://scenes/objects/smol_plant.tscn" id="8_0hbus"]
+[ext_resource type="AudioStream" uid="uid://dkhw32nmoe1tp" path="res://audio/sfx/minimize_008.ogg" id="8_axb7w"]
+[ext_resource type="PackedScene" uid="uid://srhbgalebbn2" path="res://scenes/objects/water_bottle_with_stickers.tscn" id="9_b8klv"]
+[ext_resource type="AudioStream" uid="uid://boxcbouu7lvtu" path="res://audio/music/starponder-edit5-silencecut3.mp3" id="9_o2xdv"]
+[ext_resource type="PackedScene" uid="uid://cgdixefq27un" path="res://scenes/objects/water_bottle_plain.tscn" id="10_4v5en"]
+[ext_resource type="PackedScene" uid="uid://c3fl7xo3acw4e" path="res://scenes/objects/stickynotes.tscn" id="11_jakkf"]
+[ext_resource type="PackedScene" uid="uid://b3fj0wdqw5qpc" path="res://scenes/objects/phone.tscn" id="12_ee27n"]
+[ext_resource type="PackedScene" uid="uid://cmb1xebw8jtbv" path="res://scenes/objects/pen_2.tscn" id="13_mp2gg"]
+[ext_resource type="PackedScene" uid="uid://b2j7aslkdp7a0" path="res://scenes/objects/bin_with_paper.tscn" id="14_gecg8"]
+[ext_resource type="PackedScene" uid="uid://c7yrr2tlgl5de" path="res://scenes/objects/sticker_sheets.tscn" id="15_n8r65"]
+[ext_resource type="AudioStream" uid="uid://c14fh5uo66548" path="res://audio/sfx/bong_001.ogg" id="19_pkkem"]
+[ext_resource type="PackedScene" uid="uid://dhlwpaca02j60" path="res://scenes/room_final.tscn" id="20_ut3lv"]
+[ext_resource type="AudioStream" uid="uid://k5t8lv2daojn" path="res://audio/sfx/maximize_008.ogg" id="21_fruid"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_jfkdy"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0kvcs"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("19_pkkem")
+stream_0/weight = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehyiu"]
+size = Vector3(1, 0.375977, 1.28027)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q5lpc"]
+size = Vector3(1, 0.918945, 0.283447)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lltl6"]
+size = Vector3(1, 0.972656, 0.222656)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynfxx"]
+size = Vector3(0.307617, 1.03027, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33lel"]
+size = Vector3(1.51538, 5.31934, 3.93359)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qcq3t"]
+size = Vector3(0.961914, 0.416992, 0.777344)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_innod"]
+size = Vector3(0.793945, 1, 0.261719)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glf1t"]
+size = Vector3(1, 0.898682, 0.333984)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2nih"]
+size = Vector3(0.736084, 0.392822, 0.719727)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ev2vn"]
+size = Vector3(1.10498, 1.15405, 0.322266)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1qy82"]
+size = Vector3(1, 1.09082, 0.369141)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2h3a"]
+size = Vector3(0.976868, 0.192383, 0.814453)

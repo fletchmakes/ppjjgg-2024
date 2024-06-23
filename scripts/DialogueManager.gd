@@ -13,6 +13,7 @@ func OpenDialogueAndPauseGame(text_indices: PackedInt32Array):
 func NextPassage():
 	# all done reading, back to gameplay
 	if (cursor + 1 >= current_passage.size() and DIALOGUE_LAYER.can_read_next_passage()):
+		
 		DIALOGUE_LAYER.hide_dialogue_ui();
 		cursor = -1;
 	# if the text is done animating

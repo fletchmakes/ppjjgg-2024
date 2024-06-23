@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2j7aslkdp7a0"]
+
+[ext_resource type="PackedScene" uid="uid://cjlqqivgwig8j" path="res://art/3d assets/objects/glbs/bin with paper.glb" id="1_omcl4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vq6ux"]
+height = 0.245461
+radius = 0.0864694
+
+[node name="bin with paper" instance=ExtResource("1_omcl4")]
+
+[node name="Interactable_bin" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_bin" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.981018, 0.138476, -0.959144)
+shape = SubResource("CylinderShape3D_vq6ux")

@@ -1,4 +1,5 @@
 extends Control
+@onready var sfx_menu_button = $SFXMenuButton
 
 var display_state = "shown";
 
@@ -16,4 +17,5 @@ func _process(delta):
 			
 
 func _on_play_button_pressed():
+	sfx_menu_button.play()
 	self.display_state = "hiding";

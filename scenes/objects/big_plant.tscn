@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://nkuhxk1nkj1b"]
+
+[ext_resource type="PackedScene" uid="uid://ccebqrmcmxu56" path="res://art/3d assets/objects/glbs/big plant.glb" id="1_prdgg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_31g6q"]
+height = 0.150581
+radius = 0.0675303
+
+[node name="big plant" instance=ExtResource("1_prdgg")]
+
+[node name="Interactable_big_plant" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_big_plant" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.362605, 1.13013, -1.20466)
+shape = SubResource("CylinderShape3D_31g6q")
