@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3fj0wdqw5qpc"]
+
+[ext_resource type="PackedScene" uid="uid://xhlway7m1sut" path="res://art/3d assets/objects/glbs/phone.glb" id="1_yu32c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_acgyp"]
+size = Vector3(0.0837402, 0.0212402, 0.166016)
+
+[node name="phone" instance=ExtResource("1_yu32c")]
+
+[node name="Interactable_phone" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_phone" index="0"]
+transform = Transform3D(0.790786, 0, -0.612093, 0, 1, 0, 0.612093, 0, 0.790786, -0.140441, 0.645408, -0.857504)
+shape = SubResource("BoxShape3D_acgyp")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3fl7xo3acw4e"]
+
+[ext_resource type="PackedScene" uid="uid://dhla3q6p0fqpj" path="res://art/3d assets/objects/glbs/stickynotes.glb" id="1_fh1td"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16gnp"]
+size = Vector3(0.0837402, 0.0212402, 0.0859375)
+
+[node name="stickynotes" instance=ExtResource("1_fh1td")]
+
+[node name="Interactable_stickynotes" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_stickynotes" index="0"]
+transform = Transform3D(0.968239, 0, -0.250025, 0, 1, 0, 0.250025, 0, 0.968239, -0.453585, 0.649245, -1.11187)
+shape = SubResource("BoxShape3D_16gnp")

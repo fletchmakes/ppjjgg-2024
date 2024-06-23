@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://srhbgalebbn2"]
+
+[ext_resource type="PackedScene" uid="uid://b1gn53mrc5nuo" path="res://art/3d assets/objects/glbs/water bottle with stickers.glb" id="1_u38mq"]
+
+[node name="water bottle with stickers" instance=ExtResource("1_u38mq")]

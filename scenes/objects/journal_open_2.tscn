@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkr1b7k0phdgh"]
+
+[ext_resource type="PackedScene" uid="uid://86yyceel227y" path="res://art/3d assets/objects/glbs/journal-open2.glb" id="1_4ka61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nuewp"]
+size = Vector3(0.358398, 0.0673828, 0.255859)
+
+[node name="journal-open2" instance=ExtResource("1_4ka61")]
+
+[node name="Interactable_journal_open" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_journal_open" index="0"]
+transform = Transform3D(0.906713, 0, 0.421748, 0, 1, 0, -0.421748, 0, 0.906713, -0.716316, 0.687042, -0.907435)
+shape = SubResource("BoxShape3D_nuewp")

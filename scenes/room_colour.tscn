@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://lb3ha2ik85i4"]
+
+[ext_resource type="PackedScene" uid="uid://bs8r134ngo2yd" path="res://art/3d assets/objects/glbs/room-colour.glb" id="1_gpu0b"]
+
+[node name="room-colour" instance=ExtResource("1_gpu0b")]
+
+[node name="Light_003" parent="lamp" index="1"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, -1.38021, 0.872146, -0.0782747)
+visible = false
+light_energy = 1.455
+
+[node name="Camera3D" type="Camera3D" parent="." index="73"]
+transform = Transform3D(1, 0, 0, 0, 0.968135, 0.250431, 0, -0.250431, 0.968135, 0, 1.68315, 2.4349)

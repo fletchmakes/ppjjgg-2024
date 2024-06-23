@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmb1xebw8jtbv"]
+
+[ext_resource type="PackedScene" uid="uid://c5st2wga7dhoh" path="res://art/3d assets/objects/glbs/pen.glb" id="1_nn834"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6oxd1"]
+radius = 0.0114569
+height = 0.164586
+
+[node name="pen2" instance=ExtResource("1_nn834")]
+
+[node name="Interactable_pen" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_pen" index="0"]
+transform = Transform3D(-2.16373e-08, -0.495004, 0.868891, 1, -4.37114e-08, 0, 3.79804e-08, 0.868891, 0.495004, -0.40653, 0.657395, -0.846972)
+shape = SubResource("CapsuleShape3D_6oxd1")

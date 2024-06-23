@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7yrr2tlgl5de"]
+
+[ext_resource type="PackedScene" uid="uid://2712s4c034eo" path="res://art/3d assets/objects/glbs/sticker sheets.glb" id="1_rubhx"]
+[ext_resource type="Texture2D" uid="uid://g7i3cidir5n0" path="res://art/3d assets/environment/room-colour4_sticker sheet 3.png" id="2_0jqtu"]
+[ext_resource type="Texture2D" uid="uid://l0fhfway8tae" path="res://art/3d assets/objects/sticker sheets_sticker sheet2.png" id="2_thw70"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scka7"]
+albedo_texture = ExtResource("2_0jqtu")
+uv1_scale = Vector3(8, 8, 8)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8enpj"]
+albedo_texture = ExtResource("2_thw70")
+uv1_scale = Vector3(8, 8, 8)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urr4a"]
+albedo_texture = ExtResource("2_0jqtu")
+uv1_scale = Vector3(8, 8, 8)
+uv1_offset = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dpilv"]
+size = Vector3(0.0935059, 0.0078125, 0.128906)
+
+[node name="sticker sheets" instance=ExtResource("1_rubhx")]
+
+[node name="Plane_004" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_scka7")
+
+[node name="Plane_005" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_8enpj")
+
+[node name="Plane_012" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_urr4a")
+
+[node name="Interactable_stickers" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_stickers" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272215, 0.790846, -1.07903)
+shape = SubResource("BoxShape3D_dpilv")

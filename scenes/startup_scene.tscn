@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsberelpj75c1"]
+[gd_scene load_steps=5 format=3 uid="uid://dsberelpj75c1"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_fq0jm"]
 [ext_resource type="Texture2D" uid="uid://cl1pejodkacyg" path="res://art/misc/title-art.png" id="2_yh44b"]
 [ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="3_cmpxs"]
+[ext_resource type="AudioStream" uid="uid://bdgceweci8w3c" path="res://audio/sfx/drop_004.ogg" id="4_h211g"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -63,5 +64,9 @@ theme_override_font_sizes/normal_font_size = 26
 text = "made by fable, ri, soren & fletch"
 fit_content = true
 autowrap_mode = 0
+
+[node name="SFXMenuButton" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h211g")
+volume_db = -10.0
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/PlayButton" to="." method="_on_play_button_pressed"]
