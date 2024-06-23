@@ -193,7 +193,6 @@ visible = false
 visible = false
 
 [node name="water bottle plain" parent="Interactables" instance=ExtResource("10_o83ou")]
-script = null
 
 [node name="stickynotes" parent="Interactables" instance=ExtResource("11_74m1i")]
 
