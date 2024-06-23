@@ -174,6 +174,7 @@ func _on_interactable_waterbottle_plain_input_event(camera, event, position, nor
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 		DialogueManager.OpenDialogueAndPauseGame([8])
 		GameManager.ResetYawnTimer()
+		GameManager.is_water_bottle_clicked = true
 
 #pen
 func _on_interactable_pen_mouse_entered():

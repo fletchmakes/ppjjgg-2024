@@ -3,7 +3,15 @@ extends Node
 var yawn_timer = null;
 var audio_stream = null;
 
-@onready var yawn_resource = load("res://audio/yawn1.mp3");
+@onready var yawn_resource = load("res://audio/sfx/yawn1.mp3");
+
+# ------------------------------
+# START GAME STATE TRACKING EXAMPLE
+@onready var is_water_bottle_clicked: bool = false;
+# END GAME STATE TRACKING EXAMPLE
+# ------------------------------
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

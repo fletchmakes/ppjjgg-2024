@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgdixefq27un"]
+[gd_scene load_steps=4 format=3 uid="uid://cgdixefq27un"]
 
 [ext_resource type="PackedScene" uid="uid://xv474mm6aq5n" path="res://art/3d assets/objects/glbs/water bottle plain.glb" id="1_6cmrv"]
+[ext_resource type="Script" path="res://scripts/objects/water_bottle.gd" id="2_efc7m"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8hwou"]
 height = 0.199465
 radius = 0.0492578
 
 [node name="water bottle plain" instance=ExtResource("1_6cmrv")]
+script = ExtResource("2_efc7m")
 
 [node name="Interactable_waterbottle_plain" type="Area3D" parent="." index="1"]
 
