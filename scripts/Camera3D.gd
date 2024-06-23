@@ -1,6 +1,6 @@
 extends Camera3D
 #since there is no physical player character this is basically our player script I suppose?
-@onready var sfx_interactables = $"../../SFXInteractables"
+@onready var sfx_interactables = GameManager.SFXInteractablesPlayer;
 
 var cursor = preload("res://art/cursors/hand_thin_small_point.png")
 var cursor_interactable = preload("res://art/cursors/hand_thin_small_open.png")
@@ -174,7 +174,8 @@ func _on_interactable_waterbottle_plain_input_event(camera, event, position, nor
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 		DialogueManager.OpenDialogueAndPauseGame([8])
 		GameManager.ResetYawnTimer()
-		GameManager.is_water_bottle_clicked = true
+		# Let the game know that the water bottle was clicked
+		GameManager.click_water_bottle()
 
 #pen
 func _on_interactable_pen_mouse_entered():

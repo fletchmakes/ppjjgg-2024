@@ -1,17 +1,38 @@
 extends Node
 
+# references to other nodes
+var SFXInteractablesPlayer = null;
+
+# get a reference to World 1 (and later on, World 2) root nodes so that 
+# we can manipulate objects within them later
+# World 1 has a script attached to it that will bind this variable
+# to itself on _ready();
+var World1RootNode = null;
+var World2RootNode = null;
+
+# ------------------------------
+# START GAME STATE TRACKING EXAMPLE
+@onready var interacted_big_plant := false
+@onready var interacted_journal  := false
+@onready var interacted_smol_plant  := false
+@onready var interacted_water_bottle  := false
+@onready var interacted_sticky_notes  := false
+@onready var interacted_phone  := false
+@onready var interacted_pen  := false
+@onready var interacted_bin  := false
+
+func click_water_bottle():
+	interacted_water_bottle = true;
+	World1RootNode.water_bottle_clicked();
+# END GAME STATE TRACKING EXAMPLE
+# ------------------------------
+
+# yawn stuff
 var yawn_timer = null;
 var audio_stream = null;
 
 @onready var yawn_resource = load("res://audio/sfx/yawn1.mp3");
-
-# ------------------------------
-# START GAME STATE TRACKING EXAMPLE
-@onready var is_water_bottle_clicked: bool = false;
-# END GAME STATE TRACKING EXAMPLE
-# ------------------------------
-
-
+# end yawn stuff
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
