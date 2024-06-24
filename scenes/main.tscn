@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=14 format=3 uid="uid://ckhmm36sa88xv"]
 
 [ext_resource type="PackedScene" uid="uid://cqjj1t48ewdp2" path="res://scenes/world_1.tscn" id="2_u14to"]
 [ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
 [ext_resource type="PackedScene" uid="uid://kckhnjx3gg0o" path="res://scenes/dialogue_scene.tscn" id="4_lbbjr"]
+[ext_resource type="PackedScene" uid="uid://b2gfxoqdtwrqv" path="res://scenes/end_screen.tscn" id="4_mr7q7"]
 [ext_resource type="PackedScene" uid="uid://dsberelpj75c1" path="res://scenes/startup_scene.tscn" id="5_km7y5"]
 [ext_resource type="AudioStream" uid="uid://dkhw32nmoe1tp" path="res://audio/sfx/minimize_008.ogg" id="8_axb7w"]
 [ext_resource type="AudioStream" uid="uid://boxcbouu7lvtu" path="res://audio/music/starponder-edit5-silencecut3.mp3" id="9_o2xdv"]
 [ext_resource type="Script" path="res://scripts/SFXInteractables.gd" id="9_xl21r"]
+[ext_resource type="AudioStream" uid="uid://bdgceweci8w3c" path="res://audio/sfx/drop_004.ogg" id="11_ccgl2"]
 [ext_resource type="AudioStream" uid="uid://c14fh5uo66548" path="res://audio/sfx/bong_001.ogg" id="19_pkkem"]
 [ext_resource type="AudioStream" uid="uid://k5t8lv2daojn" path="res://audio/sfx/maximize_008.ogg" id="21_fruid"]
 
@@ -14,6 +16,12 @@
 random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("19_pkkem")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rkuj8"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("11_ccgl2")
 stream_0/weight = 1.0
 
 [node name="Main" type="Node3D"]
@@ -25,6 +33,9 @@ text_speed = 0.05
 [node name="DialogueUI" parent="DialogueLayer" instance=ExtResource("4_lbbjr")]
 
 [node name="MainMenu" parent="DialogueLayer" instance=ExtResource("5_km7y5")]
+
+[node name="EndScreen" parent="DialogueLayer" instance=ExtResource("4_mr7q7")]
+visible = false
 
 [node name="SFXText" type="AudioStreamPlayer" parent="DialogueLayer"]
 stream = SubResource("AudioStreamRandomizer_0kvcs")
@@ -46,3 +57,7 @@ volume_db = -20.0
 script = ExtResource("9_xl21r")
 
 [node name="World 1" parent="." instance=ExtResource("2_u14to")]
+
+[node name="SFXItemClicked" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_rkuj8")
+volume_db = -20.0

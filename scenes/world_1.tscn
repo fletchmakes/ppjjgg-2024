@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cqjj1t48ewdp2"]
+[gd_scene load_steps=51 format=3 uid="uid://cqjj1t48ewdp2"]
 
 [ext_resource type="Script" path="res://scripts/world_1.gd" id="1_hkgix"]
 [ext_resource type="PackedScene" uid="uid://bvw0ypa3tkwga" path="res://scenes/interactable.tscn" id="1_pmgy1"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b2j7aslkdp7a0" path="res://scenes/objects/bin_with_paper.tscn" id="14_0n312"]
 [ext_resource type="PackedScene" uid="uid://c7yrr2tlgl5de" path="res://scenes/objects/sticker_sheets.tscn" id="15_blrkv"]
 [ext_resource type="PackedScene" uid="uid://dhlwpaca02j60" path="res://scenes/room_final.tscn" id="16_sp1fp"]
+[ext_resource type="PackedScene" uid="uid://bj44sghu7l6jt" path="res://scenes/objects/sock.tscn" id="18_cr55u"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_jfkdy"]
 
@@ -182,6 +183,9 @@ environment = SubResource("Environment_eb7qm")
 [node name="Plane_004" parent="Environment/room-colour4/desk storage" index="0"]
 visible = false
 
+[node name="fable" parent="Environment/room-colour4" index="59"]
+transform = Transform3D(-0.00231561, -0.00449156, -0.242252, 0.0792579, 0.451883, -0.00262645, 0.357737, -0.100145, -0.000986204, 0.702502, 1.24308, -1.122)
+
 [node name="Interactables" type="Node3D" parent="Environment"]
 
 [node name="big plant" parent="Environment/Interactables" instance=ExtResource("5_5h8mg")]
@@ -205,6 +209,7 @@ visible = false
 [node name="water bottle plain" parent="Environment/Interactables" instance=ExtResource("10_o83ou")]
 
 [node name="stickynotes" parent="Environment/Interactables" instance=ExtResource("11_74m1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="phone" parent="Environment/Interactables" instance=ExtResource("12_2lxna")]
 
@@ -426,6 +431,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35783, 6.35674, -5.50075)
 shape = SubResource("BoxShape3D_a4l7l")
 
+[node name="sock" parent="Environment" instance=ExtResource("18_cr55u")]
+transform = Transform3D(-0.858074, 7.50152e-08, 0.513526, -8.74228e-08, -1, 0, 0.513526, -4.48939e-08, 0.858074, 0.000532508, 0.0679576, -1.94044)
+
 [node name="SFXRotate" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_crdo2")
 volume_db = -10.0
@@ -498,6 +506,7 @@ volume_db = -10.0
 [connection signal="input_event" from="Environment/Books/hereholdmyfish" to="Pivot/Camera3D" method="_on_hereholdmyfish_input_event"]
 [connection signal="input_event" from="Environment/Books/thetismrizz" to="Pivot/Camera3D" method="_on_thetismrizz_input_event"]
 [connection signal="input_event" from="Environment/Books/imalittlebrainspicy" to="Pivot/Camera3D" method="_on_imalittlebrainspicy_input_event"]
+[connection signal="input_event" from="Environment/sock/Interactable_sock" to="Pivot/Camera3D" method="_on_interactable_sock_input_event"]
 
 [editable path="Sprite3D/Interactable"]
 [editable path="Environment/room-colour4"]
@@ -513,3 +522,4 @@ volume_db = -10.0
 [editable path="Environment/Interactables/pen2"]
 [editable path="Environment/Interactables/bin with paper"]
 [editable path="Environment/Interactables/sticker sheets"]
+[editable path="Environment/sock"]

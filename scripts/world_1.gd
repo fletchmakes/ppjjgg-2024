@@ -15,6 +15,8 @@ extends Node3D
 @onready var wall_2_meshes = get_tree().get_nodes_in_group("wall_2")
 @onready var wall_3_meshes = get_tree().get_nodes_in_group("wall_3")
 @onready var wall_4_meshes = get_tree().get_nodes_in_group("wall_4")
+@onready var sock = $Environment/sock
+@onready var book_collision = $Environment/Books
 
 var zoomTarget
 var zoomSpeed := 0.1
@@ -81,6 +83,7 @@ func rotate_environment():
 func check_walls():
 	match rotation_tracker:
 		0:
+			book_collision.visible = true
 			tween_2 = create_tween()
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
@@ -90,10 +93,9 @@ func check_walls():
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
 			for mesh in wall_4_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
-			#tween.parallel().tween_property(wall_3, "transparency", 1.0, wall_fade_speed)
-			#tween.parallel().tween_property(wall_4, "transparency", 1.0, wall_fade_speed)
 		1:
 			tween_2 = create_tween()
+			book_collision.visible = false
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
 			for mesh in wall_2_meshes:
@@ -104,6 +106,7 @@ func check_walls():
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
 		2:
 			tween_2 = create_tween()
+			book_collision.visible = false
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
 			for mesh in wall_2_meshes:
@@ -114,6 +117,7 @@ func check_walls():
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
 		3:
 			tween_2 = create_tween()
+			book_collision.visible = true
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
 			for mesh in wall_2_meshes:
@@ -124,6 +128,7 @@ func check_walls():
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
 		-1:
 			tween_2 = create_tween()
+			book_collision.visible = true
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
 			for mesh in wall_2_meshes:
@@ -134,6 +139,7 @@ func check_walls():
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
 		-2:
 			tween_2 = create_tween()
+			book_collision.visible = false
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
 			for mesh in wall_2_meshes:
@@ -143,6 +149,7 @@ func check_walls():
 			for mesh in wall_4_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 0.0, wall_fade_speed)
 		-3:
+			book_collision.visible = false
 			tween_2 = create_tween()
 			for mesh in wall_1_meshes:
 				tween_2.parallel().tween_property(mesh, "transparency", 1.0, wall_fade_speed)
@@ -198,15 +205,9 @@ func journal_clicked():
 func sticky_notes_clicked():
 	pass
 	
-func phone_clicked():
-	pass
-	
-func pen_clicked():
-	pass
-	
-func bin_clicked():
-	pass
-	
 func stickers_clicked():
 	sticker_sheets.visible = false
-
+	
+func sock_clicked():
+	sock.visible = false
+	pass
