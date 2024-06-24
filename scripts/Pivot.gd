@@ -55,16 +55,12 @@ func _input(event):
 func pan_camera(delta):
 	var pan_movement = Vector3.ZERO
 	if Input.is_action_pressed("pan_left"):
-		print("left")
 		pan_movement.x -= 1
 	if Input.is_action_pressed("pan_right"):
-		print("right")
 		pan_movement.x += 1
 	if Input.is_action_pressed("pan_up"):
-		print("up")
 		pan_movement.y += 1
 	if Input.is_action_pressed("pan_down"):
-		print("down")
 		pan_movement.y -= 1
 	pan_movement = pan_movement.normalized()
 	position += pan_movement * delta

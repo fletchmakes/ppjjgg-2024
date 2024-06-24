@@ -50,7 +50,6 @@ func _process(delta):
 	
 func rotate_environment():
 	if Input.is_action_just_pressed("rotate_left") and tween == null:
-		#print("rotate left")
 		sfx_rotate.play()
 		tween = create_tween()
 		tween.set_trans(Tween.TRANS_BACK)
@@ -62,10 +61,8 @@ func rotate_environment():
 			rotation_tracker = 0
 		tween.tween_callback(tween_finished)
 		check_walls()
-		print(rotation_tracker)
 		
 	elif Input.is_action_just_pressed("rotate_right") and tween == null:
-		#print("rotate right")
 		sfx_rotate.play()
 		tween = create_tween()
 		tween.set_trans(Tween.TRANS_BACK)
@@ -77,7 +74,6 @@ func rotate_environment():
 			rotation_tracker = 0
 		tween.tween_callback(tween_finished)
 		check_walls()
-		print(rotation_tracker)
 
 #This hides and shows walls according to the rotation of the environment
 func check_walls():
@@ -185,7 +181,6 @@ func water_bottle_clicked():
 		water_bottle_state_2.visible = true;
 		
 func water_bottle_stickers_clicked():
-	print("world state water bottle stickers clicked")
 	water_bottle_state_2.visible = false;
 	
 func big_plant_clicked():
