@@ -104,7 +104,7 @@ func _ready():
 	
 	audio_stream = AudioStreamPlayer.new();
 	audio_stream.set_stream(yawn_resource)
-	audio_stream.volume_db = -15
+	audio_stream.volume_db = -20
 	audio_stream.pitch_scale = 1.3
 	add_child(audio_stream);
 	

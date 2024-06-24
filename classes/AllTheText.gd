@@ -165,7 +165,7 @@ Calling all creative and crafty creatures!", #64
 	#epilogue
 	"After ending the phone call, you stretch, take a deep breath, and wiggle your body to shake off the brain fog. That impromptu nap might’ve been exactly what you needed as now you feel ready to venture outside of your apartment to spend time with your friends.", #69
 	"I know it’ll probably take a lot of energy and I might need 14 hours of sleep tonight, but I’m excited to learn something new today.", #70
-	"Some days, the AD is in HD, and that’s okay. It’s valid to take a break and start again tomorrow. Making sure I am kind and patient with myself can take work, but it’s worth it, because I deserve it.", #71
+	"Some days, the AD is in HD, and that’s okay.", #71
 	
 	#Minor interactables that are not books
 	#Bed

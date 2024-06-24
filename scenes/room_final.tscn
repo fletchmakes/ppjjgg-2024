@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhlwpaca02j60"]
+[gd_scene load_steps=15 format=3 uid="uid://dhlwpaca02j60"]
 
 [ext_resource type="PackedScene" uid="uid://ntddg2018s28" path="res://art/3d assets/environment/room-colour4.gltf" id="1_5gwbp"]
 [ext_resource type="Texture2D" uid="uid://cnlrsj185ji1h" path="res://art/3d assets/environment/room-colour4_fletchdoodle-bg.png" id="2_pb2d1"]
 [ext_resource type="Texture2D" uid="uid://vbtvqg536tie" path="res://art/3d assets/environment/room-colour4_sorendoodle-bg.png" id="3_mq6r7"]
 [ext_resource type="Texture2D" uid="uid://q5bjnnlh6uob" path="res://art/3d assets/environment/room-colour4_ridoodle-bg.png" id="4_n1iot"]
+[ext_resource type="Texture2D" uid="uid://caggl4w61hurq" path="res://art/3d assets/environment/room-colour4_fabledoodle-bg.png" id="5_pnu7e"]
 [ext_resource type="Texture2D" uid="uid://cpuwnrhaavv4p" path="res://art/3d assets/environment/room-colour4_clarence-bg.png" id="5_u5dm8"]
 [ext_resource type="PackedScene" uid="uid://cc2lfm4cd1p4b" path="res://scenes/wall_3_bybed.tscn" id="6_jv6dc"]
 [ext_resource type="PackedScene" uid="uid://dgw3k0131lbsv" path="res://scenes/wall_4.tscn" id="7_ncl4v"]
@@ -13,25 +14,31 @@ size = Vector3(2.63184, 2.52734, 0.486328)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1fwh"]
 albedo_texture = ExtResource("2_pb2d1")
-uv1_scale = Vector3(1.8, 1.8, 1.8)
+uv1_scale = Vector3(1.504, 2, 1.353)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_leokn"]
 albedo_texture = ExtResource("3_mq6r7")
-uv1_scale = Vector3(1.8, 1.8, 1.8)
+uv1_scale = Vector3(1.8, 2.5, 1.8)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nxgt"]
 albedo_texture = ExtResource("4_n1iot")
-uv1_scale = Vector3(1.8, 1.8, 1.8)
+uv1_scale = Vector3(1.8, 2.5, 1.8)
 uv1_offset = Vector3(0, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cke0i"]
+albedo_texture = ExtResource("5_pnu7e")
+uv1_scale = Vector3(1.336, 2.07, 1.336)
+uv1_offset = Vector3(-0.16, 0.5, -0.495)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tf7h"]
 albedo_texture = ExtResource("5_u5dm8")
-uv1_scale = Vector3(1.8, 1.8, 1.8)
+uv1_scale = Vector3(1.8, 2.5, 1.5)
 uv1_offset = Vector3(0, 0.5, 0.5)
 uv1_triplanar = true
 
@@ -382,17 +389,17 @@ shape = SubResource("BoxShape3D_de478")
 [node name="paper star_015" parent="window_001" index="5" groups=["wall_2"]]
 
 [node name="fletch" parent="." index="54" groups=["wall_1"]]
-transform = Transform3D(0.346478, 0, 0, 0, -1.51451e-08, -0.346478, 0, 0.346478, -1.51451e-08, -1.16579, 1.03828, -0.397398)
+transform = Transform3D(0.346478, 0, 0, 0, 0.477472, -4.78814e-14, 0, 9.30221e-14, 0.24577, -1.16579, 1.03828, -0.397398)
 material_override = SubResource("StandardMaterial3D_j1fwh")
 material_overlay = SubResource("StandardMaterial3D_j1fwh")
 
 [node name="soren" parent="." index="55" groups=["wall_1"]]
-transform = Transform3D(0.336692, 0, 0, 0, -1.47173e-08, -0.282601, 0, 0.336692, -1.23529e-08, -1.16547, 1.18826, -0.64871)
+transform = Transform3D(0.336692, 0, 0, 0, 0.381209, -1.49086e-14, 0, 2.71515e-14, 0.23718, -1.16547, 1.18826, -0.64871)
 material_override = SubResource("StandardMaterial3D_leokn")
 material_overlay = SubResource("StandardMaterial3D_leokn")
 
 [node name="ri" parent="." index="56" groups=["wall_1"]]
-transform = Transform3D(0.336692, 0, 0, 0, -1.47173e-08, -0.282601, 0, 0.336692, -1.23529e-08, -1.16432, 1.34634, -0.393344)
+transform = Transform3D(0.336692, 0, 0, 0, 0.38936, -1.45011e-14, 0, 2.77321e-14, 0.230698, -1.16432, 1.34634, -0.393344)
 material_override = SubResource("StandardMaterial3D_8nxgt")
 material_overlay = SubResource("StandardMaterial3D_8nxgt")
 
@@ -401,6 +408,8 @@ material_overlay = SubResource("StandardMaterial3D_8nxgt")
 [node name="Circle_005" parent="." index="58" groups=["wall_2"]]
 
 [node name="fable" parent="." index="59" groups=["wall_2"]]
+transform = Transform3D(-0.00231561, -0.00449156, -0.242252, 0.0792579, 0.451883, -0.00262645, 0.357737, -0.100145, -0.000986204, 0.702502, 1.24308, -1.12626)
+material_override = SubResource("StandardMaterial3D_cke0i")
 
 [node name="Circle_006" parent="." index="60" groups=["wall_2"]]
 
@@ -429,7 +438,7 @@ material_overlay = SubResource("StandardMaterial3D_8nxgt")
 [node name="Circle_018" parent="." index="72" groups=["wall_1"]]
 
 [node name="clarence" parent="." index="74" groups=["wall_1"]]
-transform = Transform3D(0.5789, 0, 0, 0, -2.53045e-08, -0.5789, 0, 0.5789, -2.53045e-08, -1.13104, 1.28148, -0.0366429)
+transform = Transform3D(0.5789, 0, 0, 0, 0.81046, 1.61648e-14, 0, -3.23297e-14, 0.40523, -1.13104, 1.28148, -0.0366429)
 material_override = SubResource("StandardMaterial3D_4tf7h")
 material_overlay = SubResource("StandardMaterial3D_4tf7h")
 
