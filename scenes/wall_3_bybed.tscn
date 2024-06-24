@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc2lfm4cd1p4b"]
+
+[ext_resource type="PackedScene" uid="uid://c7rtkbc3ccr87" path="res://art/3d assets/environment/wall3-bybed.gltf" id="1_iwpb1"]
+
+[node name="wall3-bybed" instance=ExtResource("1_iwpb1")]
+
+[node name="walls_003" parent="." index="0" groups=["wall_3"]]
+
+[node name="Circle_019" parent="walls_003" index="0" groups=["wall_3"]]
+
+[node name="Circle_020" parent="walls_003" index="1" groups=["wall_3"]]
+
+[node name="Circle_021" parent="walls_003" index="2" groups=["wall_3"]]
+
+[node name="Circle_022" parent="walls_003" index="3" groups=["wall_3"]]
+
+[node name="Circle_023" parent="walls_003" index="4" groups=["wall_3"]]
+
+[node name="Text_002" parent="walls_003" index="5" groups=["wall_3"]]

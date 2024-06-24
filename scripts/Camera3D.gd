@@ -11,7 +11,7 @@ var tween
 
 #These keep the camera from getting too zoomed in or zoomed out
 var size_min := 1
-var size_max := 5
+var size_max := 6
 
 #Speed at which the camera zooms in and out
 var zoom_speed := 0.1
@@ -210,11 +210,12 @@ func _on_interactable_smol_plant_input_event(camera, event, position, normal, sh
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		sfx_interactables.play()
 		if interacted_smol_plant == false:
-			interacted_smol_plant  = true
 			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 			DialogueManager.OpenDialogueAndPauseGame([52, 58, 53])
 			GameManager.ResetYawnTimer()
 			GameManager.click_smol_plant()
+			interacted_smol_plant  = true
+			pass
 		elif interacted_smol_plant == true and interacted_water_bottle_stickers == true:
 			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 			DialogueManager.OpenDialogueAndPauseGame([54, 61, 55, 56, 57])
@@ -438,4 +439,13 @@ func _on_imalittlebrainspicy_input_event(camera, event, position, normal, shape_
 		sfx_interactables.play()
 		#Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 		DialogueManager.OpenDialogueAndPauseGame([45])
+		GameManager.ResetYawnTimer()
+
+#Minor interactables that are not books
+#Bed
+func _on_interactable_bed_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		sfx_interactables.play()
+		#Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+		DialogueManager.OpenDialogueAndPauseGame([72])
 		GameManager.ResetYawnTimer()

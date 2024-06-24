@@ -35,7 +35,7 @@ static var RESOURCES: PackedStringArray = [
 	"this is the pen", #9
 	
 	#phone
-	"ask Fable to add flavour text for clicking on the phone before epilogue stuff", #10
+	"When you tap the screen of your phone, several new notifications scroll into view. The urge to pick it up and get lost in checking them all almost overtakes you, but you set it back down. Must stay focused!!", #10
 	
 	#stickynotes
 	"Then, peeking from the bin below your desk, a crumpled page catches your eye. A poem lies unfinished, written in four skewed lines, hurried scrawl, and two-toned ink as if the first pen had dried mid-stroke.", #11
@@ -167,4 +167,16 @@ Calling all creative and crafty creatures!", #64
 	"I know it’ll probably take a lot of energy and I might need 14 hours of sleep tonight, but I’m excited to learn something new today.", #70
 	"Some days, the AD is in HD, and that’s okay. It’s valid to take a break and start again tomorrow. Making sure I am kind and patient with myself can take work, but it’s worth it, because I deserve it.", #71
 	
+	#Minor interactables that are not books
+	#Bed
+	"So comfy… You just had a nap, but those pillows are calling to you.", #72
+	
+	#whoops needed to add a couple more lines for sticky notes
+	"they are always there: the council of jurors
+critiquing me, judging me, wondering where i went wrong
+needling my mind with their pointed inquiries", #73
+
+	"my eyes are a dam
+don't mistake the walls of my face
+for the lack of softness in my person", #74
 ]

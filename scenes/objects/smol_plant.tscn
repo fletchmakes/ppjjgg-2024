@@ -8,6 +8,242 @@ radius = 0.0560491
 
 [node name="smol plant" instance=ExtResource("1_kbuna")]
 
+[node name="cactus_003" parent="." index="0" groups=["wall_2"]]
+
+[node name="cactus_0032" parent="." index="1" groups=["wall_2"]]
+
+[node name="cactus_0033" parent="." index="2" groups=["wall_2"]]
+
+[node name="cactus_0034" parent="." index="3" groups=["wall_2"]]
+
+[node name="cactus_0035" parent="." index="4" groups=["wall_2"]]
+
+[node name="cactus_0036" parent="." index="5" groups=["wall_2"]]
+
+[node name="cactus_0037" parent="." index="6" groups=["wall_2"]]
+
+[node name="cactus_0038" parent="." index="7" groups=["wall_2"]]
+
+[node name="cactus_0039" parent="." index="8" groups=["wall_2"]]
+
+[node name="cactus_00310" parent="." index="9" groups=["wall_2"]]
+
+[node name="cactus_00311" parent="." index="10" groups=["wall_2"]]
+
+[node name="cactus_00312" parent="." index="11" groups=["wall_2"]]
+
+[node name="cactus_00313" parent="." index="12" groups=["wall_2"]]
+
+[node name="cactus_00314" parent="." index="13" groups=["wall_2"]]
+
+[node name="cactus_00315" parent="." index="14" groups=["wall_2"]]
+
+[node name="cactus_00316" parent="." index="15" groups=["wall_2"]]
+
+[node name="cactus_00317" parent="." index="16" groups=["wall_2"]]
+
+[node name="cactus_00318" parent="." index="17" groups=["wall_2"]]
+
+[node name="cactus_00319" parent="." index="18" groups=["wall_2"]]
+
+[node name="cactus_00320" parent="." index="19" groups=["wall_2"]]
+
+[node name="cactus_00321" parent="." index="20" groups=["wall_2"]]
+
+[node name="cactus_00322" parent="." index="21" groups=["wall_2"]]
+
+[node name="cactus_00323" parent="." index="22" groups=["wall_2"]]
+
+[node name="cactus_00324" parent="." index="23" groups=["wall_2"]]
+
+[node name="cactus_00325" parent="." index="24" groups=["wall_2"]]
+
+[node name="cactus_00326" parent="." index="25" groups=["wall_2"]]
+
+[node name="cactus_00327" parent="." index="26" groups=["wall_2"]]
+
+[node name="cactus_00328" parent="." index="27" groups=["wall_2"]]
+
+[node name="cactus_00329" parent="." index="28" groups=["wall_2"]]
+
+[node name="cactus_00330" parent="." index="29" groups=["wall_2"]]
+
+[node name="cactus_00331" parent="." index="30" groups=["wall_2"]]
+
+[node name="cactus_00332" parent="." index="31" groups=["wall_2"]]
+
+[node name="cactus_00333" parent="." index="32" groups=["wall_2"]]
+
+[node name="cactus_00334" parent="." index="33" groups=["wall_2"]]
+
+[node name="cactus_00335" parent="." index="34" groups=["wall_2"]]
+
+[node name="cactus_00336" parent="." index="35" groups=["wall_2"]]
+
+[node name="cactus_00337" parent="." index="36" groups=["wall_2"]]
+
+[node name="cactus_00338" parent="." index="37" groups=["wall_2"]]
+
+[node name="cactus_00339" parent="." index="38" groups=["wall_2"]]
+
+[node name="cactus_00340" parent="." index="39" groups=["wall_2"]]
+
+[node name="cactus_00341" parent="." index="40" groups=["wall_2"]]
+
+[node name="cactus_00342" parent="." index="41" groups=["wall_2"]]
+
+[node name="cactus_00343" parent="." index="42" groups=["wall_2"]]
+
+[node name="cactus_00344" parent="." index="43" groups=["wall_2"]]
+
+[node name="cactus_00345" parent="." index="44" groups=["wall_2"]]
+
+[node name="cactus_00346" parent="." index="45" groups=["wall_2"]]
+
+[node name="cactus_00347" parent="." index="46" groups=["wall_2"]]
+
+[node name="cactus_00348" parent="." index="47" groups=["wall_2"]]
+
+[node name="cactus_00349" parent="." index="48" groups=["wall_2"]]
+
+[node name="cactus_00350" parent="." index="49" groups=["wall_2"]]
+
+[node name="cactus_00351" parent="." index="50" groups=["wall_2"]]
+
+[node name="cactus_00352" parent="." index="51" groups=["wall_2"]]
+
+[node name="cactus_00353" parent="." index="52" groups=["wall_2"]]
+
+[node name="cactus_00354" parent="." index="53" groups=["wall_2"]]
+
+[node name="cactus_00355" parent="." index="54" groups=["wall_2"]]
+
+[node name="cactus_00356" parent="." index="55" groups=["wall_2"]]
+
+[node name="cactus_00357" parent="." index="56" groups=["wall_2"]]
+
+[node name="cactus_00358" parent="." index="57" groups=["wall_2"]]
+
+[node name="cactus_00359" parent="." index="58" groups=["wall_2"]]
+
+[node name="cactus_00360" parent="." index="59" groups=["wall_2"]]
+
+[node name="cactus_00361" parent="." index="60" groups=["wall_2"]]
+
+[node name="cactus_00362" parent="." index="61" groups=["wall_2"]]
+
+[node name="cactus_00363" parent="." index="62" groups=["wall_2"]]
+
+[node name="cactus_00364" parent="." index="63" groups=["wall_2"]]
+
+[node name="cactus_00365" parent="." index="64" groups=["wall_2"]]
+
+[node name="cactus_00366" parent="." index="65" groups=["wall_2"]]
+
+[node name="cactus_00367" parent="." index="66" groups=["wall_2"]]
+
+[node name="cactus_00368" parent="." index="67" groups=["wall_2"]]
+
+[node name="cactus_00369" parent="." index="68" groups=["wall_2"]]
+
+[node name="cactus_00370" parent="." index="69" groups=["wall_2"]]
+
+[node name="cactus_00371" parent="." index="70" groups=["wall_2"]]
+
+[node name="cactus_00372" parent="." index="71" groups=["wall_2"]]
+
+[node name="cactus_00373" parent="." index="72" groups=["wall_2"]]
+
+[node name="cactus_00374" parent="." index="73" groups=["wall_2"]]
+
+[node name="cactus_00375" parent="." index="74" groups=["wall_2"]]
+
+[node name="cactus_00376" parent="." index="75" groups=["wall_2"]]
+
+[node name="cactus_00377" parent="." index="76" groups=["wall_2"]]
+
+[node name="cactus_00378" parent="." index="77" groups=["wall_2"]]
+
+[node name="cactus_00379" parent="." index="78" groups=["wall_2"]]
+
+[node name="cactus_00380" parent="." index="79" groups=["wall_2"]]
+
+[node name="cactus_00381" parent="." index="80" groups=["wall_2"]]
+
+[node name="cactus_00382" parent="." index="81" groups=["wall_2"]]
+
+[node name="cactus_00383" parent="." index="82" groups=["wall_2"]]
+
+[node name="cactus_00384" parent="." index="83" groups=["wall_2"]]
+
+[node name="cactus_00385" parent="." index="84" groups=["wall_2"]]
+
+[node name="cactus_00386" parent="." index="85" groups=["wall_2"]]
+
+[node name="cactus_00387" parent="." index="86" groups=["wall_2"]]
+
+[node name="cactus_00388" parent="." index="87" groups=["wall_2"]]
+
+[node name="cactus_00389" parent="." index="88" groups=["wall_2"]]
+
+[node name="cactus_00390" parent="." index="89" groups=["wall_2"]]
+
+[node name="cactus_00391" parent="." index="90" groups=["wall_2"]]
+
+[node name="cactus_00392" parent="." index="91" groups=["wall_2"]]
+
+[node name="cactus_00393" parent="." index="92" groups=["wall_2"]]
+
+[node name="cactus_00394" parent="." index="93" groups=["wall_2"]]
+
+[node name="cactus_00395" parent="." index="94" groups=["wall_2"]]
+
+[node name="cactus_00396" parent="." index="95" groups=["wall_2"]]
+
+[node name="cactus_00397" parent="." index="96" groups=["wall_2"]]
+
+[node name="cactus_00398" parent="." index="97" groups=["wall_2"]]
+
+[node name="cactus_00399" parent="." index="98" groups=["wall_2"]]
+
+[node name="cactus_003100" parent="." index="99" groups=["wall_2"]]
+
+[node name="cactus_003101" parent="." index="100" groups=["wall_2"]]
+
+[node name="cactus_003102" parent="." index="101" groups=["wall_2"]]
+
+[node name="cactus_003103" parent="." index="102" groups=["wall_2"]]
+
+[node name="cactus_003104" parent="." index="103" groups=["wall_2"]]
+
+[node name="cactus_003105" parent="." index="104" groups=["wall_2"]]
+
+[node name="cactus_003106" parent="." index="105" groups=["wall_2"]]
+
+[node name="cactus_003107" parent="." index="106" groups=["wall_2"]]
+
+[node name="cactus_003108" parent="." index="107" groups=["wall_2"]]
+
+[node name="cactus_003109" parent="." index="108" groups=["wall_2"]]
+
+[node name="cactus_003110" parent="." index="109" groups=["wall_2"]]
+
+[node name="cactus_003111" parent="." index="110" groups=["wall_2"]]
+
+[node name="cactus_003112" parent="." index="111" groups=["wall_2"]]
+
+[node name="cactus_003113" parent="." index="112" groups=["wall_2"]]
+
+[node name="cactus_003114" parent="." index="113" groups=["wall_2"]]
+
+[node name="cactus_003115" parent="." index="114" groups=["wall_2"]]
+
+[node name="cactus_003116" parent="." index="115" groups=["wall_2"]]
+
+[node name="cactus_003117" parent="." index="116" groups=["wall_2"]]
+
+[node name="cactus_003118" parent="." index="117" groups=["wall_2"]]
+
 [node name="Interactable_smol_plant" type="Area3D" parent="." index="118"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_smol_plant" index="0"]

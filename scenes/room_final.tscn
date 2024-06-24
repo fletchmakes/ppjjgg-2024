@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhlwpaca02j60"]
+[gd_scene load_steps=13 format=3 uid="uid://dhlwpaca02j60"]
 
 [ext_resource type="PackedScene" uid="uid://ntddg2018s28" path="res://art/3d assets/environment/room-colour4.gltf" id="1_5gwbp"]
 [ext_resource type="Texture2D" uid="uid://cnlrsj185ji1h" path="res://art/3d assets/environment/room-colour4_fletchdoodle-bg.png" id="2_pb2d1"]
 [ext_resource type="Texture2D" uid="uid://vbtvqg536tie" path="res://art/3d assets/environment/room-colour4_sorendoodle-bg.png" id="3_mq6r7"]
 [ext_resource type="Texture2D" uid="uid://q5bjnnlh6uob" path="res://art/3d assets/environment/room-colour4_ridoodle-bg.png" id="4_n1iot"]
 [ext_resource type="Texture2D" uid="uid://cpuwnrhaavv4p" path="res://art/3d assets/environment/room-colour4_clarence-bg.png" id="5_u5dm8"]
+[ext_resource type="PackedScene" uid="uid://cc2lfm4cd1p4b" path="res://scenes/wall_3_bybed.tscn" id="6_jv6dc"]
+[ext_resource type="PackedScene" uid="uid://dgw3k0131lbsv" path="res://scenes/wall_4.tscn" id="7_ncl4v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_de478"]
+size = Vector3(2.63184, 2.52734, 0.486328)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1fwh"]
 albedo_texture = ExtResource("2_pb2d1")
@@ -32,22 +37,405 @@ uv1_triplanar = true
 
 [node name="room-colour4" instance=ExtResource("1_5gwbp")]
 
-[node name="fletch" parent="." index="54"]
+[node name="Plane_003" parent="." index="0" groups=["wall_2"]]
+
+[node name="Interactable_bed" type="Area3D" parent="bed" index="7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bed/Interactable_bed" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00663459, 0, -0.0293422)
+shape = SubResource("BoxShape3D_de478")
+
+[node name="floating shelf" parent="." index="6" groups=["wall_2"]]
+
+[node name="bookshelf" parent="." index="9" groups=["wall_1"]]
+
+[node name="book1" parent="bookshelf" index="0" groups=["wall_1"]]
+
+[node name="book1_001" parent="bookshelf" index="1" groups=["wall_1"]]
+
+[node name="book1_002" parent="bookshelf" index="2" groups=["wall_1"]]
+
+[node name="book1_003" parent="bookshelf" index="3" groups=["wall_1"]]
+
+[node name="book1_004" parent="bookshelf" index="4" groups=["wall_1"]]
+
+[node name="book1_005" parent="bookshelf" index="5" groups=["wall_1"]]
+
+[node name="book1_006" parent="bookshelf" index="6" groups=["wall_1"]]
+
+[node name="book1_007" parent="bookshelf" index="7" groups=["wall_1"]]
+
+[node name="book1_008" parent="bookshelf" index="8" groups=["wall_1"]]
+
+[node name="book1_009" parent="bookshelf" index="9" groups=["wall_1"]]
+
+[node name="book1_010" parent="bookshelf" index="10" groups=["wall_1"]]
+
+[node name="book1_011" parent="bookshelf" index="11" groups=["wall_1"]]
+
+[node name="book1_012" parent="bookshelf" index="12" groups=["wall_1"]]
+
+[node name="book1_013" parent="bookshelf" index="13" groups=["wall_1"]]
+
+[node name="book1_014" parent="bookshelf" index="14" groups=["wall_1"]]
+
+[node name="book1_015" parent="bookshelf" index="15" groups=["wall_1"]]
+
+[node name="book1_016" parent="bookshelf" index="16" groups=["wall_1"]]
+
+[node name="book1_017" parent="bookshelf" index="17" groups=["wall_1"]]
+
+[node name="book1_018" parent="bookshelf" index="18" groups=["wall_1"]]
+
+[node name="book1_019" parent="bookshelf" index="19" groups=["wall_1"]]
+
+[node name="book1_020" parent="bookshelf" index="20" groups=["wall_1"]]
+
+[node name="Cube_003" parent="bookshelf" index="21" groups=["wall_1"]]
+
+[node name="Cube_004" parent="bookshelf" index="22" groups=["wall_1"]]
+
+[node name="book stack desk_001" parent="." index="12" groups=["wall_2"]]
+
+[node name="book stack desk_002" parent="." index="13" groups=["wall_2"]]
+
+[node name="book stack desk_003" parent="." index="14" groups=["wall_2"]]
+
+[node name="walls_001" parent="." index="20" groups=["wall_1"]]
+
+[node name="walls_002" parent="." index="21" groups=["wall_2"]]
+
+[node name="window" parent="." index="22" groups=["wall_2"]]
+
+[node name="walls_006" parent="window" index="0" groups=["wall_2"]]
+
+[node name="walls_007" parent="window" index="1" groups=["wall_2"]]
+
+[node name="Circle_003" parent="." index="30" groups=["wall_2"]]
+
+[node name="frame fable" parent="." index="31" groups=["wall_2"]]
+
+[node name="frame soren" parent="." index="32" groups=["wall_1"]]
+
+[node name="frame fletch" parent="." index="33" groups=["wall_1"]]
+
+[node name="frame clarence" parent="." index="34" groups=["wall_1"]]
+
+[node name="frame ri" parent="." index="35" groups=["wall_1"]]
+
+[node name="cactus" parent="." index="36" groups=["wall_2"]]
+
+[node name="Cube_005" parent="cactus" index="0" groups=["wall_2"]]
+
+[node name="Cube_006" parent="cactus" index="1" groups=["wall_2"]]
+
+[node name="Cube_007" parent="cactus" index="2" groups=["wall_2"]]
+
+[node name="Cube_008" parent="cactus" index="3" groups=["wall_2"]]
+
+[node name="Cube_009" parent="cactus" index="4" groups=["wall_2"]]
+
+[node name="Cube_010" parent="cactus" index="5" groups=["wall_2"]]
+
+[node name="Sphere_002" parent="cactus" index="6" groups=["wall_2"]]
+
+[node name="floating shelf_001" parent="." index="37" groups=["wall_2"]]
+
+[node name="plant pot 3" parent="." index="38" groups=["wall_2"]]
+
+[node name="plant 3" parent="." index="39" groups=["wall_2"]]
+
+[node name="Plane_0032" parent="plant 3" index="0" groups=["wall_2"]]
+
+[node name="Plane_0033" parent="plant 3" index="1" groups=["wall_2"]]
+
+[node name="Plane_0034" parent="plant 3" index="2" groups=["wall_2"]]
+
+[node name="Plane_0035" parent="plant 3" index="3" groups=["wall_2"]]
+
+[node name="Plane_0036" parent="plant 3" index="4" groups=["wall_2"]]
+
+[node name="Plane_0037" parent="plant 3" index="5" groups=["wall_2"]]
+
+[node name="Plane_0038" parent="plant 3" index="6" groups=["wall_2"]]
+
+[node name="Plane_0039" parent="plant 3" index="7" groups=["wall_2"]]
+
+[node name="Plane_00310" parent="plant 3" index="8" groups=["wall_2"]]
+
+[node name="Plane_00311" parent="plant 3" index="9" groups=["wall_2"]]
+
+[node name="Plane_00312" parent="plant 3" index="10" groups=["wall_2"]]
+
+[node name="Plane_00313" parent="plant 3" index="11" groups=["wall_2"]]
+
+[node name="Plane_00314" parent="plant 3" index="12" groups=["wall_2"]]
+
+[node name="Plane_00315" parent="plant 3" index="13" groups=["wall_2"]]
+
+[node name="Plane_00316" parent="plant 3" index="14" groups=["wall_2"]]
+
+[node name="Plane_00317" parent="plant 3" index="15" groups=["wall_2"]]
+
+[node name="Plane_00318" parent="plant 3" index="16" groups=["wall_2"]]
+
+[node name="Plane_00319" parent="plant 3" index="17" groups=["wall_2"]]
+
+[node name="Plane_00320" parent="plant 3" index="18" groups=["wall_2"]]
+
+[node name="Plane_00321" parent="plant 3" index="19" groups=["wall_2"]]
+
+[node name="Plane_00322" parent="plant 3" index="20" groups=["wall_2"]]
+
+[node name="Plane_00323" parent="plant 3" index="21" groups=["wall_2"]]
+
+[node name="Plane_00324" parent="plant 3" index="22" groups=["wall_2"]]
+
+[node name="Plane_00325" parent="plant 3" index="23" groups=["wall_2"]]
+
+[node name="Plane_00326" parent="plant 3" index="24" groups=["wall_2"]]
+
+[node name="Plane_00327" parent="plant 3" index="25" groups=["wall_2"]]
+
+[node name="Plane_00328" parent="plant 3" index="26" groups=["wall_2"]]
+
+[node name="Plane_00329" parent="plant 3" index="27" groups=["wall_2"]]
+
+[node name="Plane_00330" parent="plant 3" index="28" groups=["wall_2"]]
+
+[node name="Plane_00331" parent="plant 3" index="29" groups=["wall_2"]]
+
+[node name="Plane_00332" parent="plant 3" index="30" groups=["wall_2"]]
+
+[node name="Plane_00333" parent="plant 3" index="31" groups=["wall_2"]]
+
+[node name="Plane_00334" parent="plant 3" index="32" groups=["wall_2"]]
+
+[node name="Plane_00335" parent="plant 3" index="33" groups=["wall_2"]]
+
+[node name="Plane_00336" parent="plant 3" index="34" groups=["wall_2"]]
+
+[node name="Plane_00337" parent="plant 3" index="35" groups=["wall_2"]]
+
+[node name="NurbsPath_001" parent="." index="40" groups=["wall_2"]]
+
+[node name="Plane_00338" parent="NurbsPath_001" index="0" groups=["wall_2"]]
+
+[node name="Plane_00339" parent="NurbsPath_001" index="1" groups=["wall_2"]]
+
+[node name="Plane_00340" parent="NurbsPath_001" index="2" groups=["wall_2"]]
+
+[node name="Plane_00341" parent="NurbsPath_001" index="3" groups=["wall_2"]]
+
+[node name="Plane_00342" parent="NurbsPath_001" index="4" groups=["wall_2"]]
+
+[node name="Plane_00343" parent="NurbsPath_001" index="5" groups=["wall_2"]]
+
+[node name="Plane_00344" parent="NurbsPath_001" index="6" groups=["wall_2"]]
+
+[node name="Plane_00345" parent="NurbsPath_001" index="7" groups=["wall_2"]]
+
+[node name="Plane_00346" parent="NurbsPath_001" index="8" groups=["wall_2"]]
+
+[node name="Plane_00347" parent="NurbsPath_001" index="9" groups=["wall_2"]]
+
+[node name="Plane_00348" parent="NurbsPath_001" index="10" groups=["wall_2"]]
+
+[node name="Plane_00349" parent="NurbsPath_001" index="11" groups=["wall_2"]]
+
+[node name="Plane_00350" parent="NurbsPath_001" index="12" groups=["wall_2"]]
+
+[node name="Plane_00351" parent="NurbsPath_001" index="13" groups=["wall_2"]]
+
+[node name="Plane_00352" parent="NurbsPath_001" index="14" groups=["wall_2"]]
+
+[node name="Plane_00353" parent="NurbsPath_001" index="15" groups=["wall_2"]]
+
+[node name="Plane_00354" parent="NurbsPath_001" index="16" groups=["wall_2"]]
+
+[node name="Plane_00355" parent="NurbsPath_001" index="17" groups=["wall_2"]]
+
+[node name="Plane_00356" parent="NurbsPath_001" index="18" groups=["wall_2"]]
+
+[node name="Plane_00357" parent="NurbsPath_001" index="19" groups=["wall_2"]]
+
+[node name="Plane_00358" parent="NurbsPath_001" index="20" groups=["wall_2"]]
+
+[node name="Plane_00359" parent="NurbsPath_001" index="21" groups=["wall_2"]]
+
+[node name="Plane_00360" parent="NurbsPath_001" index="22" groups=["wall_2"]]
+
+[node name="Plane_00361" parent="NurbsPath_001" index="23" groups=["wall_2"]]
+
+[node name="Plane_00362" parent="NurbsPath_001" index="24" groups=["wall_2"]]
+
+[node name="Plane_00363" parent="NurbsPath_001" index="25" groups=["wall_2"]]
+
+[node name="Plane_00364" parent="NurbsPath_001" index="26" groups=["wall_2"]]
+
+[node name="Plane_00365" parent="NurbsPath_001" index="27" groups=["wall_2"]]
+
+[node name="Plane_00366" parent="NurbsPath_001" index="28" groups=["wall_2"]]
+
+[node name="Plane_00367" parent="NurbsPath_001" index="29" groups=["wall_2"]]
+
+[node name="Plane_00368" parent="NurbsPath_001" index="30" groups=["wall_2"]]
+
+[node name="Plane_00369" parent="NurbsPath_001" index="31" groups=["wall_2"]]
+
+[node name="Plane_00370" parent="NurbsPath_001" index="32" groups=["wall_2"]]
+
+[node name="Plane_00371" parent="NurbsPath_001" index="33" groups=["wall_2"]]
+
+[node name="Plane_00372" parent="NurbsPath_001" index="34" groups=["wall_2"]]
+
+[node name="Plane_00373" parent="NurbsPath_001" index="35" groups=["wall_2"]]
+
+[node name="NurbsPath_002" parent="." index="41" groups=["wall_2"]]
+
+[node name="Plane_00374" parent="NurbsPath_002" index="0" groups=["wall_2"]]
+
+[node name="Plane_00375" parent="NurbsPath_002" index="1" groups=["wall_2"]]
+
+[node name="Plane_00376" parent="NurbsPath_002" index="2" groups=["wall_2"]]
+
+[node name="Plane_00377" parent="NurbsPath_002" index="3" groups=["wall_2"]]
+
+[node name="Plane_00378" parent="NurbsPath_002" index="4" groups=["wall_2"]]
+
+[node name="Plane_00379" parent="NurbsPath_002" index="5" groups=["wall_2"]]
+
+[node name="Plane_00380" parent="NurbsPath_002" index="6" groups=["wall_2"]]
+
+[node name="Plane_00381" parent="NurbsPath_002" index="7" groups=["wall_2"]]
+
+[node name="Plane_00382" parent="NurbsPath_002" index="8" groups=["wall_2"]]
+
+[node name="Plane_00383" parent="NurbsPath_002" index="9" groups=["wall_2"]]
+
+[node name="Plane_00384" parent="NurbsPath_002" index="10" groups=["wall_2"]]
+
+[node name="Plane_00385" parent="NurbsPath_002" index="11" groups=["wall_2"]]
+
+[node name="Plane_00386" parent="NurbsPath_002" index="12" groups=["wall_2"]]
+
+[node name="Plane_00387" parent="NurbsPath_002" index="13" groups=["wall_2"]]
+
+[node name="Plane_00388" parent="NurbsPath_002" index="14" groups=["wall_2"]]
+
+[node name="Plane_00389" parent="NurbsPath_002" index="15" groups=["wall_2"]]
+
+[node name="Plane_00390" parent="NurbsPath_002" index="16" groups=["wall_2"]]
+
+[node name="Plane_00391" parent="NurbsPath_002" index="17" groups=["wall_2"]]
+
+[node name="Plane_00392" parent="NurbsPath_002" index="18" groups=["wall_2"]]
+
+[node name="Plane_00393" parent="NurbsPath_002" index="19" groups=["wall_2"]]
+
+[node name="Plane_00394" parent="NurbsPath_002" index="20" groups=["wall_2"]]
+
+[node name="Plane_00395" parent="NurbsPath_002" index="21" groups=["wall_2"]]
+
+[node name="Plane_00396" parent="NurbsPath_002" index="22" groups=["wall_2"]]
+
+[node name="Plane_00397" parent="NurbsPath_002" index="23" groups=["wall_2"]]
+
+[node name="Plane_00398" parent="NurbsPath_002" index="24" groups=["wall_2"]]
+
+[node name="Plane_00399" parent="NurbsPath_002" index="25" groups=["wall_2"]]
+
+[node name="Plane_003100" parent="NurbsPath_002" index="26" groups=["wall_2"]]
+
+[node name="Plane_003101" parent="NurbsPath_002" index="27" groups=["wall_2"]]
+
+[node name="Plane_003102" parent="NurbsPath_002" index="28" groups=["wall_2"]]
+
+[node name="Plane_003103" parent="NurbsPath_002" index="29" groups=["wall_2"]]
+
+[node name="Plane_003104" parent="NurbsPath_002" index="30" groups=["wall_2"]]
+
+[node name="Plane_003105" parent="NurbsPath_002" index="31" groups=["wall_2"]]
+
+[node name="Plane_003106" parent="NurbsPath_002" index="32" groups=["wall_2"]]
+
+[node name="Plane_003107" parent="NurbsPath_002" index="33" groups=["wall_2"]]
+
+[node name="Plane_003108" parent="NurbsPath_002" index="34" groups=["wall_2"]]
+
+[node name="Plane_003109" parent="NurbsPath_002" index="35" groups=["wall_2"]]
+
+[node name="rubix" parent="." index="42" groups=["wall_2"]]
+
+[node name="window_001" parent="." index="53" groups=["wall_2"]]
+
+[node name="paper star_010" parent="window_001" index="0" groups=["wall_2"]]
+
+[node name="paper star_011" parent="window_001" index="1" groups=["wall_2"]]
+
+[node name="paper star_012" parent="window_001" index="2" groups=["wall_2"]]
+
+[node name="paper star_013" parent="window_001" index="3" groups=["wall_2"]]
+
+[node name="paper star_014" parent="window_001" index="4" groups=["wall_2"]]
+
+[node name="paper star_015" parent="window_001" index="5" groups=["wall_2"]]
+
+[node name="fletch" parent="." index="54" groups=["wall_1"]]
 transform = Transform3D(0.346478, 0, 0, 0, -1.51451e-08, -0.346478, 0, 0.346478, -1.51451e-08, -1.16579, 1.03828, -0.397398)
 material_override = SubResource("StandardMaterial3D_j1fwh")
 material_overlay = SubResource("StandardMaterial3D_j1fwh")
 
-[node name="soren" parent="." index="55"]
+[node name="soren" parent="." index="55" groups=["wall_1"]]
 transform = Transform3D(0.336692, 0, 0, 0, -1.47173e-08, -0.282601, 0, 0.336692, -1.23529e-08, -1.16547, 1.18826, -0.64871)
 material_override = SubResource("StandardMaterial3D_leokn")
 material_overlay = SubResource("StandardMaterial3D_leokn")
 
-[node name="ri" parent="." index="56"]
+[node name="ri" parent="." index="56" groups=["wall_1"]]
 transform = Transform3D(0.336692, 0, 0, 0, -1.47173e-08, -0.282601, 0, 0.336692, -1.23529e-08, -1.16432, 1.34634, -0.393344)
 material_override = SubResource("StandardMaterial3D_8nxgt")
 material_overlay = SubResource("StandardMaterial3D_8nxgt")
 
-[node name="clarence" parent="." index="74"]
+[node name="Circle_004" parent="." index="57" groups=["wall_2"]]
+
+[node name="Circle_005" parent="." index="58" groups=["wall_2"]]
+
+[node name="fable" parent="." index="59" groups=["wall_2"]]
+
+[node name="Circle_006" parent="." index="60" groups=["wall_2"]]
+
+[node name="Circle_007" parent="." index="61" groups=["wall_2"]]
+
+[node name="Circle_008" parent="." index="62" groups=["wall_2"]]
+
+[node name="Circle_009" parent="." index="63" groups=["wall_1"]]
+
+[node name="Circle_010" parent="." index="64" groups=["wall_1"]]
+
+[node name="Circle_011" parent="." index="65" groups=["wall_1"]]
+
+[node name="Circle_012" parent="." index="66" groups=["wall_1"]]
+
+[node name="Circle_013" parent="." index="67" groups=["wall_1"]]
+
+[node name="Circle_014" parent="." index="68" groups=["wall_1"]]
+
+[node name="Circle_015" parent="." index="69" groups=["wall_1"]]
+
+[node name="Circle_016" parent="." index="70" groups=["wall_1"]]
+
+[node name="Circle_017" parent="." index="71" groups=["wall_1"]]
+
+[node name="Circle_018" parent="." index="72" groups=["wall_1"]]
+
+[node name="clarence" parent="." index="74" groups=["wall_1"]]
 transform = Transform3D(0.5789, 0, 0, 0, -2.53045e-08, -0.5789, 0, 0.5789, -2.53045e-08, -1.13104, 1.28148, -0.0366429)
 material_override = SubResource("StandardMaterial3D_4tf7h")
 material_overlay = SubResource("StandardMaterial3D_4tf7h")
+
+[node name="wall3-bybed" parent="." index="75" instance=ExtResource("6_jv6dc")]
+
+[node name="wall4" parent="." index="76" instance=ExtResource("7_ncl4v")]
+
+[editable path="wall3-bybed"]
+[editable path="wall4"]

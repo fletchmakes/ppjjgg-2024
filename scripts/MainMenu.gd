@@ -14,7 +14,6 @@ func _process(delta):
 			self.queue_free();
 		else:
 			self.set_modulate(Color(current_modulate.r, current_modulate.g, current_modulate.b, next_alpha));
-			
 
 func _on_play_button_pressed():
 	sfx_menu_button.play()

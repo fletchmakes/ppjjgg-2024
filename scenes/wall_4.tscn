@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgw3k0131lbsv"]
+
+[ext_resource type="PackedScene" uid="uid://cqrsaq18ygng0" path="res://art/3d assets/environment/wall4.gltf" id="1_22spm"]
+
+[node name="wall4" instance=ExtResource("1_22spm")]
+
+[node name="walls_008" parent="." index="0" groups=["wall_4"]]
+
+[node name="door" parent="." index="1" groups=["wall_4"]]
+
+[node name="Sphere_003" parent="door" index="0" groups=["wall_4"]]
