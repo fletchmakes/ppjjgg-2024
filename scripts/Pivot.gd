@@ -10,13 +10,17 @@ var tween: Tween = null
 #These are used to determine what direction to pan the camera
 var right_vector
 var forward_vector
-var pan_speed := 0.1
+# CHANGE THIS IF YOU WANT SOREN
+var pan_speed := 0.03
 var dragging := false
 
 var screen_ratio
 
 func _ready():
-	pass
+	camera_3d = get_node("Camera3D");
+	var screen_size = get_viewport().get_visible_rect().size;
+	screen_ratio = screen_size.y / screen_size.x
+	get_move_vectors()
 	
 func _process(delta):
 	rotate_camera()
@@ -30,16 +34,17 @@ func get_move_vectors():
 	right_vector = camera_3d.transform.basis.x
 	forward_vector = Vector3(offset.x, 0, offset.z).normalized()
 
-#func _input(event):
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_RIGHT:
-			#dragging = true
-		#else:
-			#dragging = false
-	#elif event is InputEventMouseMotion:
-		#var new_position = (right_vector * event.relative.x * pan_speed) + (forward_vector * event.relative.y * pan_speed)
-		##global_position += Vector3((right_vector * event.relative.x * pan_speed), (forward_vector * event.relative.y * pan_speed), 0 )
-	#
+func _input(event):
+	if (event is InputEventMouseButton):
+		if (event.pressed and event.button_index == MOUSE_BUTTON_RIGHT):
+			dragging = true;
+		else:
+			dragging = false;
+			
+	elif (event is InputEventMouseMotion and dragging):
+		# pan camera
+		global_position += camera_3d.global_transform.basis.x * -event.relative.x * pan_speed + forward_vector * -event.relative.y * pan_speed / screen_ratio
+
 func rotate_camera():
 	if Input.is_action_just_pressed("rotate_left") and tween == null:
 		#print("rotate left")
