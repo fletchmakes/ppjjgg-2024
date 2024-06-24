@@ -90,3 +90,7 @@ func can_read_next_passage():
 func skip_text_animation():
 	self.text_state = "ready";
 	DialogueText.visible_characters = -1;
+	
+# little hack for the sparkles bug
+func stop_mouse_inputs():
+	DialogueUI.mouse_filter = 0; # MOUSE_FILTER_STOP	
