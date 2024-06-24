@@ -19,6 +19,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="BlurBackground" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -30,10 +35,10 @@ color = Color(0, 0, 0, 0.670588)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = -64.0
-offset_top = -8.0
-offset_right = 904.0
-offset_bottom = 641.0
+offset_left = 176.0
+offset_top = 331.0
+offset_right = 1480.0
+offset_bottom = 1068.0
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_top = 435
 theme_override_constants/margin_right = 100
@@ -80,9 +85,9 @@ visible_characters_behavior = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 808.0
-offset_top = 160.0
-offset_right = 1176.0
-offset_bottom = 680.0
+offset_left = 1456.0
+offset_top = 416.0
+offset_right = 1959.35
+offset_bottom = 1128.0
 texture = ExtResource("1_nplrh")
 expand_mode = 3

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://u1inpx3w884k"]
+
+[ext_resource type="PackedScene" uid="uid://cox1o5yh1tifp" path="res://art/3d assets/environment/cactus.gltf" id="1_1gea3"]
+
+[node name="cactus2" instance=ExtResource("1_1gea3")]
+
+[node name="cactus" parent="." index="0" groups=["wall_2"]]

@@ -1,6 +1,7 @@
 extends Camera3D
 #since there is no physical player character this is basically our player script I suppose?
 @onready var sfx_interactables = GameManager.SFXInteractablesPlayer;
+@onready var end_screen = $EndScreen
 
 var cursor = preload("res://art/cursors/hand_thin_small_point.png")
 var cursor_interactable = preload("res://art/cursors/hand_thin_small_open.png")
@@ -57,15 +58,12 @@ func start_epilogue():
 		sfx_interactables.play()
 		GameManager.ResetYawnTimer()
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		
-		#Ideally I'd like for this to play lines 62 and 63, then pause and pull the desk drawer open
-		#then continue with the rest of the lines. In practice however the dialogue manager would
-		#immediate go to the second set of lines
 		DialogueManager.OpenDialogueAndPauseGame([62, 63, 64, 65, 66, 67, 68, 69, 70, 71])
 		GameManager.ResetYawnTimer()
 	else:
 		#show end screen and wrap up game
 		print("end screen should play now")
+		end_screen.visible = true
 		pass
 
 #Signal connections for Sprite3D test object

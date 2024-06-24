@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj01iv5ma6hq4"]
+
+[ext_resource type="PackedScene" uid="uid://dotsu8ko4yem0" path="res://art/3d assets/environment/paperstarsbowl.gltf" id="1_yskk0"]
+
+[node name="paperstarsbowl" instance=ExtResource("1_yskk0")]
+
+[node name="window_001" parent="." index="0" groups=["wall_2"]]

@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal dialogue_finished
 @onready var DialogueUI = $DialogueUI;
 @onready var DialogueText = $DialogueUI/MarginContainer/MarginContainer/RichTextLabel;
 @onready var DialogueNextIndicator = $DialogueUI/MarginContainer/AspectRatioContainer/NextArrow;
@@ -17,6 +18,8 @@ var delta_accumulator: float = 0.0;
 #cases where dialogue is hidden
 var initial_hide := false
 
+var epilogue_played := false
+
 func _ready():
 	DialogueManager.DIALOGUE_LAYER = self;
 	hide_dialogue_ui();
@@ -28,6 +31,7 @@ func _process(delta):
 		DialogueNextIndicator.show();
 	else:
 		DialogueNextIndicator.hide();
+		emit_signal("dialogue_finished")
 	
 	# animating the dialogue window in and out
 	if (display_state == "hiding"):

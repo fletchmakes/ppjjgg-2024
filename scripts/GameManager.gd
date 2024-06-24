@@ -68,7 +68,7 @@ func click_sticky_notes():
 	
 func click_phone():
 	interacted_phone = true
-	World1RootNode.phone_clicked()
+	#World1RootNode.phone_clicked() does not exist
 	create_sparkles()
 
 func click_stickers():
