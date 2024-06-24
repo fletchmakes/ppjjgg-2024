@@ -23,7 +23,7 @@ func _ready():
 	get_move_vectors()
 	
 func _process(delta):
-	rotate_camera()
+	#rotate_camera()
 	pass
 
 func tween_finished():
@@ -44,25 +44,6 @@ func _input(event):
 	elif (event is InputEventMouseMotion and dragging):
 		# pan camera
 		global_position += camera_3d.global_transform.basis.x * -event.relative.x * pan_speed + forward_vector * -event.relative.y * pan_speed / screen_ratio
-
-func rotate_camera():
-	if Input.is_action_just_pressed("rotate_left") and tween == null:
-		#print("rotate left")
-		sfx_rotate.play()
-		tween = create_tween()
-		tween.set_trans(Tween.TRANS_BACK)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property($".", "rotation", rotation + Vector3(0, 1.57, 0), rotation_speed)
-		tween.tween_callback(tween_finished)
-		
-	elif Input.is_action_just_pressed("rotate_right") and tween == null:
-		#print("rotate right")
-		sfx_rotate.play()
-		tween = create_tween()
-		tween.set_trans(Tween.TRANS_BACK)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property($".", "rotation", rotation + Vector3(0, -1.57, 0), rotation_speed)
-		tween.tween_callback(tween_finished)
 
 
 func pan_camera(delta):

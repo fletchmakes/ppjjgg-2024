@@ -12,7 +12,7 @@ var World2RootNode = null;
 var Camera = null
 
 # sparkles stuff
-@onready var sparkles = load("res://scenes/sparkles.tscn")
+@onready var sparkles = preload("res://scenes/sparkles.tscn")
 
 # ------------------------------
 # START GAME STATE TRACKING EXAMPLE
