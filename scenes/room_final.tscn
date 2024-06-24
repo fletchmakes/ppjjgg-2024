@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhlwpaca02j60"]
+[gd_scene load_steps=17 format=3 uid="uid://dhlwpaca02j60"]
 
 [ext_resource type="PackedScene" uid="uid://ntddg2018s28" path="res://art/3d assets/environment/room-colour4.gltf" id="1_5gwbp"]
 [ext_resource type="Texture2D" uid="uid://cnlrsj185ji1h" path="res://art/3d assets/environment/room-colour4_fletchdoodle-bg.png" id="2_pb2d1"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cpuwnrhaavv4p" path="res://art/3d assets/environment/room-colour4_clarence-bg.png" id="5_u5dm8"]
 [ext_resource type="PackedScene" uid="uid://cc2lfm4cd1p4b" path="res://scenes/wall_3_bybed.tscn" id="6_jv6dc"]
 [ext_resource type="PackedScene" uid="uid://dgw3k0131lbsv" path="res://scenes/wall_4.tscn" id="7_ncl4v"]
+[ext_resource type="PackedScene" uid="uid://bj01iv5ma6hq4" path="res://scenes/objects/paperstarsbowl_fixed.tscn" id="9_creg3"]
+[ext_resource type="PackedScene" uid="uid://u1inpx3w884k" path="res://scenes/objects/cactus_fixed.tscn" id="10_5q7jh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_de478"]
 size = Vector3(2.63184, 2.52734, 0.486328)
@@ -130,21 +132,8 @@ shape = SubResource("BoxShape3D_de478")
 
 [node name="frame ri" parent="." index="35" groups=["wall_1"]]
 
-[node name="cactus" parent="." index="36" groups=["wall_2"]]
-
-[node name="Cube_005" parent="cactus" index="0" groups=["wall_2"]]
-
-[node name="Cube_006" parent="cactus" index="1" groups=["wall_2"]]
-
-[node name="Cube_007" parent="cactus" index="2" groups=["wall_2"]]
-
-[node name="Cube_008" parent="cactus" index="3" groups=["wall_2"]]
-
-[node name="Cube_009" parent="cactus" index="4" groups=["wall_2"]]
-
-[node name="Cube_010" parent="cactus" index="5" groups=["wall_2"]]
-
-[node name="Sphere_002" parent="cactus" index="6" groups=["wall_2"]]
+[node name="cactus" parent="." index="36"]
+visible = false
 
 [node name="floating shelf_001" parent="." index="37" groups=["wall_2"]]
 
@@ -374,19 +363,8 @@ shape = SubResource("BoxShape3D_de478")
 
 [node name="rubix" parent="." index="42" groups=["wall_2"]]
 
-[node name="window_001" parent="." index="53" groups=["wall_2"]]
-
-[node name="paper star_010" parent="window_001" index="0" groups=["wall_2"]]
-
-[node name="paper star_011" parent="window_001" index="1" groups=["wall_2"]]
-
-[node name="paper star_012" parent="window_001" index="2" groups=["wall_2"]]
-
-[node name="paper star_013" parent="window_001" index="3" groups=["wall_2"]]
-
-[node name="paper star_014" parent="window_001" index="4" groups=["wall_2"]]
-
-[node name="paper star_015" parent="window_001" index="5" groups=["wall_2"]]
+[node name="window_001" parent="." index="53"]
+visible = false
 
 [node name="fletch" parent="." index="54" groups=["wall_1"]]
 transform = Transform3D(0.346478, 0, 0, 0, 0.477472, -4.78814e-14, 0, 9.30221e-14, 0.24577, -1.16579, 1.03828, -0.397398)
@@ -445,6 +423,21 @@ material_overlay = SubResource("StandardMaterial3D_4tf7h")
 [node name="wall3-bybed" parent="." index="75" instance=ExtResource("6_jv6dc")]
 
 [node name="wall4" parent="." index="76" instance=ExtResource("7_ncl4v")]
+
+[node name="paperstarsbowl" parent="." index="77" instance=ExtResource("9_creg3")]
+
+[node name="cactus2" parent="." index="78" instance=ExtResource("10_5q7jh")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.784662, 1.09568, -1.21088)
+light_color = Color(1, 0.811765, 0.654902, 1)
+light_energy = 0.4
+light_indirect_energy = 5.98
+light_size = 0.1
+distance_fade_begin = 16.4
+distance_fade_length = 0.0
+omni_range = 0.08
+omni_attenuation = 0.0647041
 
 [editable path="wall3-bybed"]
 [editable path="wall4"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvqopl8kg0nj0"]
 
-[ext_resource type="Texture2D" uid="uid://cyfeegxqjidin" path="res://art/icons/d10.png" id="1_luqsl"]
+[ext_resource type="Texture2D" uid="uid://dmd0qrpwfkvl1" path="res://art/icons/paper_star_glow_-_64.png" id="1_66gjo"]
 [ext_resource type="Script" path="res://scripts/sparkles.gd" id="2_symlk"]
 
 [sub_resource type="Gradient" id="Gradient_b2rsm"]
@@ -12,7 +12,7 @@ emitting = false
 amount = 16
 one_shot = true
 explosiveness = 1.0
-texture = ExtResource("1_luqsl")
+texture = ExtResource("1_66gjo")
 emission_shape = 1
 emission_sphere_radius = 10.0
 direction = Vector2(0, -1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cqjj1t48ewdp2"]
+[gd_scene load_steps=52 format=3 uid="uid://cqjj1t48ewdp2"]
 
 [ext_resource type="Script" path="res://scripts/world_1.gd" id="1_hkgix"]
 [ext_resource type="PackedScene" uid="uid://bvw0ypa3tkwga" path="res://scenes/interactable.tscn" id="1_pmgy1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/Camera3D.gd" id="3_te4k1"]
 [ext_resource type="AudioStream" uid="uid://d3bxlb8r87u4k" path="res://audio/sfx/maximize_006.ogg" id="4_crdo2"]
 [ext_resource type="PackedScene" uid="uid://nkuhxk1nkj1b" path="res://scenes/objects/big_plant.tscn" id="5_5h8mg"]
+[ext_resource type="PackedScene" uid="uid://b2gfxoqdtwrqv" path="res://scenes/end_screen.tscn" id="5_m0asf"]
 [ext_resource type="PackedScene" uid="uid://dtv0y2rrrlaew" path="res://scenes/objects/journal_closed.tscn" id="6_2diip"]
 [ext_resource type="PackedScene" uid="uid://dkr1b7k0phdgh" path="res://scenes/objects/journal_open_2.tscn" id="7_ek6vn"]
 [ext_resource type="PackedScene" uid="uid://dec4l7dp0gius" path="res://scenes/objects/smol_plant.tscn" id="8_ol6vj"]
@@ -145,6 +146,9 @@ fov = 17.5
 size = 5.0
 near = 0.001
 script = ExtResource("3_te4k1")
+
+[node name="EndScreen" parent="Pivot/Camera3D" instance=ExtResource("5_m0asf")]
+visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072646, 0.88908, -1.31925)
@@ -438,8 +442,6 @@ transform = Transform3D(-0.858074, 7.50152e-08, 0.513526, -8.74228e-08, -1, 0, 0
 stream = ExtResource("4_crdo2")
 volume_db = -10.0
 
-[node name="DELETE THIS BEFORE EXPORTING" type="OmniLight3D" parent="."]
-
 [connection signal="input_event" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_input_event"]
 [connection signal="mouse_entered" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_mouse_exited"]
@@ -509,6 +511,7 @@ volume_db = -10.0
 [connection signal="input_event" from="Environment/sock/Interactable_sock" to="Pivot/Camera3D" method="_on_interactable_sock_input_event"]
 
 [editable path="Sprite3D/Interactable"]
+[editable path="Pivot/Camera3D/EndScreen"]
 [editable path="Environment/room-colour4"]
 [editable path="Environment/room-colour4/wall3-bybed"]
 [editable path="Environment/room-colour4/wall4"]

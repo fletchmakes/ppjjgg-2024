@@ -5,6 +5,8 @@ var cursor: int = -1; # -1 means that we don't have any dialogue loaded to be sh
 
 var DIALOGUE_LAYER: CanvasLayer = null;
 
+
+
 func OpenDialogueAndPauseGame(text_indices: PackedInt32Array):
 	DIALOGUE_LAYER.stop_mouse_inputs();
 	# wait 1 second for sparkles to play
