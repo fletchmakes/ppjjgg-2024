@@ -78,7 +78,6 @@ theme_override_constants/margin_top = 145
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/BottomText"]
 layout_mode = 2
 theme = ExtResource("3_cmpxs")
-theme_override_font_sizes/normal_font_size = 26
 text = "made by fable, ri, soren & fletch"
 fit_content = true
 autowrap_mode = 0

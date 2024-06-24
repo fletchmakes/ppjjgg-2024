@@ -62,7 +62,6 @@ func start_epilogue():
 		GameManager.ResetYawnTimer()
 	else:
 		#show end screen and wrap up game
-		print("end screen should play now")
 		end_screen.visible = true
 		pass
 
