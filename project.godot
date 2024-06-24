@@ -14,7 +14,8 @@ config/name="PPJJGG-2024"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/image="res://art/ui/AcornJellyEndEndScreen.png"
-config/icon="res://icon.svg"
+config/icon="res://art/icons/paper_star_glow_-_128.png"
+config/windows_native_icon="res://art/icons/paper_star_glow___256_KsB_icon.ico"
 boot_splash/minimum_display_time=3000
 
 [autoload]
