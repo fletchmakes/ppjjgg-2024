@@ -11,7 +11,7 @@ var tween: Tween = null
 var right_vector
 var forward_vector
 # CHANGE THIS IF YOU WANT SOREN
-var pan_speed := 0.03
+var pan_speed := 0.001
 var dragging := false
 
 var screen_ratio
