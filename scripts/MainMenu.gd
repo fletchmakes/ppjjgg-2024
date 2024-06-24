@@ -19,3 +19,4 @@ func _process(delta):
 func _on_play_button_pressed():
 	sfx_menu_button.play()
 	self.display_state = "hiding";
+	DialogueManager.OpenDialogueAndPauseGame([48, 49, 50])

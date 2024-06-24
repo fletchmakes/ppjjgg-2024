@@ -24,15 +24,16 @@ var interacted_big_plant := false
 var interacted_journal  := false
 var interacted_smol_plant  := false
 var interacted_water_bottle  := false
+var interacted_water_bottle_stickers := false
 var interacted_sticky_notes  := false
 var interacted_phone  := false
 var interacted_pen  := false
 var interacted_bin  := false
 var interacted_stickers  := false
 
+
 func _ready():
-	#sprite3d_position = $"../../Sprite3D".position
-	pass 
+	GameManager.Camera = self
 
 func _process(delta):
 	if Input.is_action_just_pressed("zoom_in") and size > size_min:
@@ -48,37 +49,24 @@ func _process(delta):
 		tween.tween_property($".", "size", size + 1, zoom_speed)
 		#size = size + 1
 
-func objectInteracted(object_number : int):
-	var variable = object_number
-	match variable:
-		1:
-			var interacted_big_plant = true
-		2:
-			var interacted_journal = true
-		3:
-			var interacted_smol_plant = true
-		4:
-			var interacted_water_bottle = true
-		5:
-			var interacted_sticky_notes = true
-		6:
-			var interacted_phone = true
-		7:
-			var interacted_pen = true
-		8:
-			var interacted_bin = true
-		_:
-			pass
 
-func _check_completion():
-	if interacted_big_plant and interacted_journal and interacted_smol_plant and interacted_water_bottle and interacted_sticky_notes and interacted_phone and interacted_pen and interacted_bin == true:
-		#Play epilogue dialogue if all objects have been found
+#this and check_completion() are kind of achieving the same thing I think
+#this one gets called from GameManager at the appropriate time (hopefully)
+func start_epilogue():
+	if GameManager.epilogue_played == false:
 		sfx_interactables.play()
-		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([2])
 		GameManager.ResetYawnTimer()
+		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+		
+		#Ideally I'd like for this to play lines 62 and 63, then pause and pull the desk drawer open
+		#then continue with the rest of the lines. In practice however the dialogue manager would
+		#immediate go to the second set of lines
+		DialogueManager.OpenDialogueAndPauseGame([62, 63, 64, 65, 66, 67, 68, 69, 70, 71])
+		GameManager.ResetYawnTimer()
+	else:
+		#show end screen and wrap up game
+		print("end screen should play now")
 		pass
-	pass
 
 #Signal connections for Sprite3D test object
 #Highlights interactable objects when moused over
@@ -102,53 +90,6 @@ func _on_interactable_input_event(camera, event, position, normal, shape_idx):
 		DialogueManager.OpenDialogueAndPauseGame([3, 1])
 		GameManager.ResetYawnTimer()
 
-#Signal connections for Object1
-func _on_object_1_mouse_entered():
-	$"../../Interactables/Object1/MeshInstance3D/Outline".visible = true
-	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_object_1_mouse_exited():
-	$"../../Interactables/Object1/MeshInstance3D/Outline".visible = false
-	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_object_1_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		tween = create_tween()
-		tween.set_trans(Tween.TRANS_BOUNCE)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property($"../../Sprite3D", "position", sprite3d_position + Vector3(0, 0.02, 0), zoom_speed)
-		tween.tween_property($"../../Sprite3D", "position", sprite3d_position, zoom_speed)
-		sfx_interactables.play()
-		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([4])
-		GameManager.ResetYawnTimer()
-
-#Signal connections for Object2
-func _on_object_2_mouse_entered():
-	$"../../Interactables/Object2/MeshInstance3D/Outline".visible = true
-	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_object_2_mouse_exited():
-	$"../../Interactables/Object2/MeshInstance3D/Outline".visible = false
-	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_object_2_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		sfx_interactables.play()
-		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([5])
-		GameManager.ResetYawnTimer()
-
-#Signal connections for Object3
-func _on_object_3_mouse_entered():
-	$"../../Interactables/Object3/MeshInstance3D/Outline".visible = true
-	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_object_3_mouse_exited():
-	$"../../Interactables/Object3/MeshInstance3D/Outline".visible = false
-	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_object_3_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		sfx_interactables.play()
-		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([6])
-		GameManager.ResetYawnTimer()
-
 #journal (closed version)
 func _on_interactable_journal_closed_mouse_entered():
 	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
@@ -161,6 +102,22 @@ func _on_interactable_journal_closed_input_event(camera, event, position, normal
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 		DialogueManager.OpenDialogueAndPauseGame([7])
 		GameManager.ResetYawnTimer()
+		GameManager.click_journal()
+
+#journal (opened version)
+func _on_interactable_journal_open_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
+func _on_interactable_journal_open_mouse_exited():
+	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
+func _on_interactable_journal_open_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		sfx_interactables.play()
+		interacted_journal  = true
+		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+		DialogueManager.OpenDialogueAndPauseGame([46])
+		GameManager.ResetYawnTimer()
+		GameManager.click_journal()
+
 
 #water bottle (plain)
 func _on_interactable_waterbottle_plain_mouse_entered():
@@ -170,25 +127,37 @@ func _on_interactable_waterbottle_plain_mouse_exited():
 func _on_interactable_waterbottle_plain_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		sfx_interactables.play()
-		interacted_water_bottle  = true
-		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([8])
-		GameManager.ResetYawnTimer()
-		# Let the game know that the water bottle was clicked
-		GameManager.click_water_bottle()
+		if interacted_water_bottle == false and interacted_stickers == true:
+			interacted_water_bottle  = true
+			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+			DialogueManager.OpenDialogueAndPauseGame([8, 59])
+			GameManager.ResetYawnTimer()
+			GameManager.click_water_bottle()
+		elif interacted_water_bottle == true and interacted_stickers == true:
+			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+			DialogueManager.OpenDialogueAndPauseGame([59])
+			GameManager.ResetYawnTimer()
+			GameManager.click_water_bottle()
+		elif interacted_water_bottle == false and interacted_stickers == false:
+			interacted_water_bottle  = true
+			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+			DialogueManager.OpenDialogueAndPauseGame([8])
+			GameManager.ResetYawnTimer()
+			GameManager.click_water_bottle()
 
-#pen
-func _on_interactable_pen_mouse_entered():
+#water bottle (stickers applied)
+func _on_interactable_water_bottle_stickers_mouse_entered():
 	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_interactable_pen_mouse_exited():
+func _on_interactable_water_bottle_stickers_mouse_exited():
 	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_interactable_pen_input_event(camera, event, position, normal, shape_idx):
+func _on_interactable_water_bottle_stickers_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		sfx_interactables.play()
-		interacted_pen  = true
+		interacted_water_bottle_stickers = true
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([9])
+		DialogueManager.OpenDialogueAndPauseGame([60])
 		GameManager.ResetYawnTimer()
+		GameManager.click_water_bottle_stickers()
 
 #phone
 func _on_interactable_phone_mouse_entered():
@@ -202,6 +171,7 @@ func _on_interactable_phone_input_event(camera, event, position, normal, shape_i
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 		DialogueManager.OpenDialogueAndPauseGame([10])
 		GameManager.ResetYawnTimer()
+		GameManager.click_phone()
 
 #stickynotes
 func _on_interactable_stickynotes_mouse_entered():
@@ -213,21 +183,9 @@ func _on_interactable_stickynotes_input_event(camera, event, position, normal, s
 		sfx_interactables.play()
 		interacted_sticky_notes  = true
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([11, 12, 13])
+		DialogueManager.OpenDialogueAndPauseGame([51, 11, 12, 13])
 		GameManager.ResetYawnTimer()
-
-#bin with paper
-func _on_interactable_bin_mouse_entered():
-	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_interactable_bin_mouse_exited():
-	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
-func _on_interactable_bin_input_event(camera, event, position, normal, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		sfx_interactables.play()
-		interacted_bin  = true
-		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([14])
-		GameManager.ResetYawnTimer()
+		GameManager.click_sticky_notes()
 
 #sticker sheet
 func _on_interactable_stickers_mouse_entered():
@@ -239,10 +197,36 @@ func _on_interactable_stickers_input_event(camera, event, position, normal, shap
 		sfx_interactables.play()
 		interacted_stickers  = true
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([15])
+		DialogueManager.OpenDialogueAndPauseGame([15, 47])
 		GameManager.ResetYawnTimer()
+		GameManager.click_stickers()
 
-
+#plant
+func _on_interactable_smol_plant_mouse_entered():
+	Input.set_custom_mouse_cursor(cursor_eye,Input.CURSOR_ARROW,Vector2(0, 0))
+func _on_interactable_smol_plant_mouse_exited():
+	Input.set_custom_mouse_cursor(cursor,Input.CURSOR_ARROW,Vector2(0, 0))
+func _on_interactable_smol_plant_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		sfx_interactables.play()
+		if interacted_smol_plant == false:
+			interacted_smol_plant  = true
+			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+			DialogueManager.OpenDialogueAndPauseGame([52, 58, 53])
+			GameManager.ResetYawnTimer()
+			GameManager.click_smol_plant()
+		elif interacted_smol_plant == true and interacted_water_bottle_stickers == true:
+			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+			DialogueManager.OpenDialogueAndPauseGame([54, 61, 55, 56, 57])
+			GameManager.ResetYawnTimer()
+			GameManager.click_smol_plant_water()
+			GameManager.smol_plant_watered = true
+		elif interacted_smol_plant == true and interacted_water_bottle_stickers == false:
+			Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+			DialogueManager.OpenDialogueAndPauseGame([53])
+			GameManager.ResetYawnTimer()
+			GameManager.click_smol_plant()
+		
 
 #Books with minor flavor text
 #It's Only A Game

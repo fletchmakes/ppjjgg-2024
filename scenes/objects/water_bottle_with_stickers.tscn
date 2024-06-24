@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://srhbgalebbn2"]
+[gd_scene load_steps=5 format=3 uid="uid://srhbgalebbn2"]
 
 [ext_resource type="PackedScene" uid="uid://b1gn53mrc5nuo" path="res://art/3d assets/objects/glbs/water bottle with stickers.glb" id="1_u38mq"]
 [ext_resource type="Texture2D" uid="uid://bfiblhe8q21e2" path="res://art/3d assets/objects/glbs/water bottle with stickers_water bottle stickers.png" id="2_a56dr"]
@@ -8,7 +8,17 @@ albedo_texture = ExtResource("2_a56dr")
 uv1_scale = Vector3(30, 30, 30)
 uv1_triplanar = true
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_56rsa"]
+height = 0.20978
+radius = 0.0487248
+
 [node name="water bottle with stickers" instance=ExtResource("1_u38mq")]
 
 [node name="water bottle stickers" parent="." index="1"]
 material_override = SubResource("StandardMaterial3D_6727i")
+
+[node name="Interactable_water_bottle_stickers" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_water_bottle_stickers" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027879, 0.739919, -0.817939)
+shape = SubResource("CylinderShape3D_56rsa")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=11 format=3 uid="uid://ckhmm36sa88xv"]
 
 [ext_resource type="PackedScene" uid="uid://cqjj1t48ewdp2" path="res://scenes/world_1.tscn" id="2_u14to"]
 [ext_resource type="Script" path="res://scripts/DialogueLayer.gd" id="2_uga1u"]
@@ -7,7 +7,6 @@
 [ext_resource type="AudioStream" uid="uid://dkhw32nmoe1tp" path="res://audio/sfx/minimize_008.ogg" id="8_axb7w"]
 [ext_resource type="AudioStream" uid="uid://boxcbouu7lvtu" path="res://audio/music/starponder-edit5-silencecut3.mp3" id="9_o2xdv"]
 [ext_resource type="Script" path="res://scripts/SFXInteractables.gd" id="9_xl21r"]
-[ext_resource type="Script" path="res://scripts/world_1.gd" id="10_fvejo"]
 [ext_resource type="AudioStream" uid="uid://c14fh5uo66548" path="res://audio/sfx/bong_001.ogg" id="19_pkkem"]
 [ext_resource type="AudioStream" uid="uid://k5t8lv2daojn" path="res://audio/sfx/maximize_008.ogg" id="21_fruid"]
 
@@ -47,4 +46,3 @@ volume_db = -10.0
 script = ExtResource("9_xl21r")
 
 [node name="World 1" parent="." instance=ExtResource("2_u14to")]
-script = ExtResource("10_fvejo")

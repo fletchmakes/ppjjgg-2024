@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsberelpj75c1"]
+[gd_scene load_steps=6 format=3 uid="uid://dsberelpj75c1"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_fq0jm"]
 [ext_resource type="Texture2D" uid="uid://cl1pejodkacyg" path="res://art/misc/title-art.png" id="2_yh44b"]
 [ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="3_cmpxs"]
 [ext_resource type="AudioStream" uid="uid://bdgceweci8w3c" path="res://audio/sfx/drop_004.ogg" id="4_h211g"]
+[ext_resource type="Texture2D" uid="uid://c77bvfyp5yu05" path="res://art/ui/StartScreen.png" id="5_3l762"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_fq0jm")
 
 [node name="BlurBackground" type="ColorRect" parent="."]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +24,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.670588)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 652.0
+texture = ExtResource("5_3l762")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,6 +51,7 @@ theme_override_constants/margin_bottom = 35
 layout_mode = 2
 
 [node name="TitleArt" type="TextureRect" parent="VBoxContainer/TitleContainer/CenterContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 texture = ExtResource("2_yh44b")
 stretch_mode = 2
