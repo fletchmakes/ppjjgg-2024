@@ -27,6 +27,7 @@ var Camera = null
 @onready var interacted_pen  := false
 @onready var interacted_bin  := false
 @onready var interacted_stickers  := false
+@onready var interacted_sock := false
 
 @onready var epilogue_played := false
 
@@ -73,6 +74,13 @@ func click_phone():
 func click_stickers():
 	interacted_stickers = true
 	World1RootNode.stickers_clicked()
+	create_sparkles()
+	
+func click_sock():
+	interacted_sock = true
+	World1RootNode.sock_clicked()
+	create_sparkles()
+	create_sparkles()
 	create_sparkles()
 	
 func check_epilogue():

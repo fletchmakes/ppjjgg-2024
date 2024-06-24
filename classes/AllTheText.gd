@@ -54,65 +54,95 @@ flitting, flying, fluttering away
 	
 	#Book titles
 	#It's Only a Game
-	"It's Only a Game", #16
+	"This book's title reads: 
+		“It's Only a Game”", #16
 	#Frog and Cloud
-	"Frog and Cloud", #17
+	"This book's title reads: 
+		“Frog and Cloud”", #17
 	#The Speed Cat
-	"The Speed Cat", #18
+	"This book's title reads: 
+		“The Speed Cat”", #18
 	#The Sprout
-	"The Sprout", #19
+	"This book's title reads: 
+		“The Sprout”", #19
 	#Gender Magic
-	"Gender Magic", #20
+	"This book's title reads: 
+		“Gender Magic”", #20
 	#Circe
-	"Circe", #21
+	"This books title reads: 
+		“Circe”", #21
 	#Fool’s Fate
-	"Fool’s Fate", #22
+	"This books title reads: 
+		“Fool’s Fate”", #22
 	#The Happy Place
-	"The Happy Place", #23
+	"This books title reads: 
+		“The Happy Place”", #23
 	#Everything I Wanted
-	"Everything I Wanted", #24
+	"This books title reads: 
+		“Everything I Wanted”", #24
 	#Spooky Carvings, and Other Stories
-	"Spooky Carvings, and Other Stories", #25
+	"This books title reads: 
+		“Spooky Carvings, and Other Stories”", #25
 	#Matcha, a Love Story
-	"Matcha, a Love Story", #26
+	"This books title reads: 
+		“Matcha, a Love Story”", #26
 	#The Munch Kitteers
-	"The Munch Kitteers", #27
+	"This books title reads: 
+		“The Munch Kitteers”", #27
 	#Ducks Love Boba
-	"Ducks Love Boba", #28
+	"This books title reads: 
+		“Ducks Love Boba”", #28
 	#Corner of the Room
-	"Corner of the Room", #29
+	"This books title reads: 
+		“Corner of the Room”", #29
 	#Celestially, Yours
-	"Celestially, Yours", #30
+	"This books title reads: 
+		“Celestially, Yours”", #30
 	#Space Cafe
-	"Space Cafe", #31
+	"This book's title reads: 
+		“Space Cafe”", #31
 	#How to Train Your Cat
-	"How to Train Your Cat", #32
+	"This books title reads: 
+		“How to Train Your Cat”", #32
 	#The Missing Sock
-	"The Missing Sock", #33
+	"This books title reads: 
+		“The Missing Sock”", #33
 	#October Country
-	"October Country", #34
+	"This books title reads: 
+		“October Country”", #34
 	#Quack, the secrets of a mastermind
-	"Quack, the Secrets of a Mastermind", #35
+	"This books title reads: 
+		“Quack, the Secrets of a Mastermind”", #35
 	#So Many Scarves
-	"So Many Scarves", #36
+	"This books title reads: 
+		“So Many Scarves”", #36
 	#Cheesecakes
-	"Cheesecakes", #37
+	"This books title reads: 
+		“Cheesecakes”", #37
 	#Ayla’s Adventures
-	"Ayla’s Adventures", #38
+	"This books title reads: 
+		“Ayla’s Adventures”", #38
 	#The Moon and Her Man
-	"The Moon and Her Man", #39
+	"This books title reads: 
+		“The Moon and Her Man”", #39
 	#The Sea in Cerise
-	"The Sea in Cerise", #40
+	"This books title reads: 
+		“The Sea in Cerise”", #40
 	#Almost Everything
-	"Almost Everything", #41
+	"This books title reads: 
+		“Almost Everything”", #41
 	#Cats in Wizard Caps
-	"Cats in Wizard Caps", #42
+	"This books title reads: 
+		“Cats in Wizard Caps”", #42
 	#Here, Hold My Fish
-	"Here, Hold My Fish", #43
+	"This books title reads: 
+		“Here, Hold My Fish”", #43
 	#The Tism Rizz
-	"The Tism Rizz", #44
+	"This books title reads: 
+		“The Tism Rizz”", #44
 	#I’m a Little Brain-Spicy
-	"I’m a Little Brain-Spicy", #45
+	"This books title reads: 
+		“I’m a Little Brain-Spicy”", #45
 	
 	#journal (open)
 	"The first page holds a short list of “Things to Prepare” surrounded by absent-minded doodles of rainbow coloured socks. From the top, the list reads: don’t forget ur water bottle, pack a snack, might rain… umbrella?,	special camera for the sparklies, phone, this notebook, socks.", #46
@@ -179,4 +209,10 @@ needling my mind with their pointed inquiries", #73
 	"my eyes are a dam
 don't mistake the walls of my face
 for the lack of softness in my person", #74
+
+#SUPER SECRET SOCK DON'T LOOK!!! 
+#I mean you can look, especially if you made it this far already
+#it's not like I'm gonna stop you
+#HI FLETCH!! :D
+"MY SOCK!!! OH MY GOODNESS I'VE BEEN LOOKING EVERYWHERE FOR THIS!!", #75
 ]

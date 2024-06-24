@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj44sghu7l6jt"]
+
+[ext_resource type="PackedScene" uid="uid://dqiiirykxarq7" path="res://art/3d assets/objects/sock.gltf" id="1_7ci7r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d4u4v"]
+size = Vector3(0.25, 0.0664063, 0.311523)
+
+[node name="sock" instance=ExtResource("1_7ci7r")]
+
+[node name="Interactable_sock" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_sock" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.183213, 0.0686644, 1.12604)
+shape = SubResource("BoxShape3D_d4u4v")

@@ -449,3 +449,12 @@ func _on_interactable_bed_input_event(camera, event, position, normal, shape_idx
 		#Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
 		DialogueManager.OpenDialogueAndPauseGame([72])
 		GameManager.ResetYawnTimer()
+
+#SUPER SECRET SOCK!!!
+func _on_interactable_sock_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		sfx_interactables.play()
+		#Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
+		DialogueManager.OpenDialogueAndPauseGame([75])
+		GameManager.click_sock()
+		GameManager.ResetYawnTimer()
