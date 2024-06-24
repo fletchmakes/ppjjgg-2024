@@ -11,6 +11,9 @@ var World1RootNode = null;
 var World2RootNode = null;
 var Camera = null
 
+# sparkles stuff
+@onready var sparkles = load("res://scenes/sparkles.tscn")
+
 # ------------------------------
 # START GAME STATE TRACKING EXAMPLE
 @onready var interacted_big_plant := false
@@ -30,38 +33,47 @@ var Camera = null
 func click_water_bottle():
 	interacted_water_bottle = true;
 	World1RootNode.water_bottle_clicked();
+	create_sparkles()
 
 func click_water_bottle_stickers():
 	interacted_water_bottle_stickers = true;
 	World1RootNode.water_bottle_stickers_clicked();
+	create_sparkles()
 
 func click_big_plant():
 	interacted_big_plant = true
 	World1RootNode.big_plant_clicked()
+	create_sparkles()
 	
 func click_smol_plant():
 	interacted_smol_plant = true
 	World1RootNode.smol_plant_clicked()
+	create_sparkles()
 
 func click_smol_plant_water():
 	smol_plant_watered = true
 	World1RootNode.smol_plant_watered()
+	create_sparkles()
 	
 func click_journal():
 	interacted_journal = true
 	World1RootNode.journal_clicked()
+	create_sparkles()
 	
 func click_sticky_notes():
 	interacted_sticky_notes = true
 	World1RootNode.sticky_notes_clicked()
+	create_sparkles()
 	
 func click_phone():
 	interacted_phone = true
 	World1RootNode.phone_clicked()
+	create_sparkles()
 
 func click_stickers():
 	interacted_stickers = true
 	World1RootNode.stickers_clicked()
+	create_sparkles()
 	
 func check_epilogue():
 	#check that all the things have been interacted with + plant watered
@@ -104,4 +116,11 @@ func _on_timer_timeout():
 	audio_stream.play();
 	DialogueManager.OpenDialogueAndPauseGame([0]);
 	ResetYawnTimer();
+	
+# https://www.youtube.com/watch?v=MuObpUUOdlo
+func create_sparkles():
+	var sparkles_instance: CPUParticles2D = sparkles.instantiate()
+	sparkles_instance.global_position = get_viewport().get_mouse_position()
+	add_child(sparkles_instance)
+	sparkles_instance.emitting = true
 	
