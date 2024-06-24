@@ -2,8 +2,10 @@ extends Node3D
 #This node acts as a "pivot" for the purposes of rotating the camera around our little diorama
 #Length of time (in seconds) the camera will take to complete it's rotation
 @export var rotation_speed := 1.0
-@onready var sfx_rotate = $SFXRotate
+@onready var sfx_rotate = $SFXRotateCamera
 @onready var camera_3d = $Camera3D
+
+@onready var home_position = global_position
 
 var tween: Tween = null
 
@@ -44,6 +46,10 @@ func _input(event):
 	elif (event is InputEventMouseMotion and dragging):
 		# pan camera
 		global_position += camera_3d.global_transform.basis.x * -event.relative.x * pan_speed + forward_vector * -event.relative.y * pan_speed / screen_ratio
+	
+	if (event is InputEventKey and event.is_pressed() and event.is_action("ui_space")):
+		# send the camera back to it's original position
+		global_position = home_position
 
 
 func pan_camera(delta):
