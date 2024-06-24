@@ -11,11 +11,11 @@ func OpenDialogueAndPauseGame(text_indices: PackedInt32Array):
 	DIALOGUE_LAYER.show_dialogue_ui(AllTheText.RESOURCES[current_passage[cursor]]);
 	
 func NextPassage():
-	# all done reading, back to gameplay
+	# all done reading, back to gameplay and check if epilogue is ready to initiate
 	if (cursor + 1 >= current_passage.size() and DIALOGUE_LAYER.can_read_next_passage()):
-		
 		DIALOGUE_LAYER.hide_dialogue_ui();
 		cursor = -1;
+		GameManager.check_epilogue()
 	# if the text is done animating
 	elif (DIALOGUE_LAYER.can_read_next_passage()):
 		cursor += 1;

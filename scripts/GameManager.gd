@@ -9,21 +9,70 @@ var SFXInteractablesPlayer = null;
 # to itself on _ready();
 var World1RootNode = null;
 var World2RootNode = null;
+var Camera = null
 
 # ------------------------------
 # START GAME STATE TRACKING EXAMPLE
 @onready var interacted_big_plant := false
 @onready var interacted_journal  := false
 @onready var interacted_smol_plant  := false
+@onready var smol_plant_watered  := false
 @onready var interacted_water_bottle  := false
+@onready var interacted_water_bottle_stickers  := false
 @onready var interacted_sticky_notes  := false
 @onready var interacted_phone  := false
 @onready var interacted_pen  := false
 @onready var interacted_bin  := false
+@onready var interacted_stickers  := false
+
+@onready var epilogue_played := false
 
 func click_water_bottle():
 	interacted_water_bottle = true;
 	World1RootNode.water_bottle_clicked();
+
+func click_water_bottle_stickers():
+	interacted_water_bottle_stickers = true;
+	World1RootNode.water_bottle_stickers_clicked();
+
+func click_big_plant():
+	interacted_big_plant = true
+	World1RootNode.big_plant_clicked()
+	
+func click_smol_plant():
+	interacted_smol_plant = true
+	World1RootNode.smol_plant_clicked()
+
+func click_smol_plant_water():
+	smol_plant_watered = true
+	World1RootNode.smol_plant_watered()
+	
+func click_journal():
+	interacted_journal = true
+	World1RootNode.journal_clicked()
+	
+func click_sticky_notes():
+	interacted_sticky_notes = true
+	World1RootNode.sticky_notes_clicked()
+	
+func click_phone():
+	interacted_phone = true
+	World1RootNode.phone_clicked()
+
+func click_stickers():
+	interacted_stickers = true
+	World1RootNode.stickers_clicked()
+	
+func check_epilogue():
+	#check that all the things have been interacted with + plant watered
+	#I THINK what we need done is water bottle pasted with stickers, little plant watered, journal opened
+	# and read, and sticky notes read
+	# then we want to trigger phone call + epilogue text
+	if (interacted_journal and interacted_water_bottle_stickers and interacted_sticky_notes and smol_plant_watered) == true:
+		#do end game stuff
+		Camera.start_epilogue()
+		epilogue_played = true
+	
 # END GAME STATE TRACKING EXAMPLE
 # ------------------------------
 
@@ -42,7 +91,9 @@ func _ready():
 	add_child(yawn_timer);
 	
 	audio_stream = AudioStreamPlayer.new();
-	audio_stream.set_stream(yawn_resource);
+	audio_stream.set_stream(yawn_resource)
+	audio_stream.volume_db = -15
+	audio_stream.pitch_scale = 1.3
 	add_child(audio_stream);
 	
 func ResetYawnTimer():
