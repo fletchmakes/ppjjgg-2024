@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvqopl8kg0nj0"]
+
+[ext_resource type="Texture2D" uid="uid://cyfeegxqjidin" path="res://art/icons/d10.png" id="1_luqsl"]
+[ext_resource type="Script" path="res://scripts/sparkles.gd" id="2_symlk"]
+
+[sub_resource type="Gradient" id="Gradient_b2rsm"]
+offsets = PackedFloat32Array(0, 0.108247, 0.706186, 0.912371)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_luqsl")
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0, -1)
+spread = 30.0
+initial_velocity_min = 100.0
+initial_velocity_max = 480.0
+angular_velocity_min = -350.0
+angular_velocity_max = 350.0
+scale_amount_min = 0.25
+scale_amount_max = 0.35
+color = Color(1, 0.843137, 0, 1)
+color_ramp = SubResource("Gradient_b2rsm")
+script = ExtResource("2_symlk")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

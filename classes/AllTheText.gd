@@ -42,7 +42,7 @@ static var RESOURCES: PackedStringArray = [
 	"“I am as much able to direct my focus
 as a leaf can direct the wind
 flitting, flying, fluttering away
-*where the heck is my other sock*”", #12
+[s]where the heck is my other sock[/s]”", #12
 	
 "The last line has three deep strikes across the letters, crossed out and forgotten. You glance down, and sure enough, your left foot is bare, while the other wears a sock with a monstera pattern.", #13
 	
