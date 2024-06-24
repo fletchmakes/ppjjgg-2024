@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfiblhe8q21e2"
-path.s3tc="res://.godot/imported/water bottle with stickers_water bottle stickers.png-a3b95049af8bc9def61b358380fbbbe1.s3tc.ctex"
+uid="uid://b3lhwn58tr2dq"
+path.s3tc="res://.godot/imported/stickerroll_water bottle stickers.png-b63a6e5452ec300b7a7c15f92c795a39.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://art/3d assets/objects/glbs/water bottle with stickers_water bottle stickers.png"
-dest_files=["res://.godot/imported/water bottle with stickers_water bottle stickers.png-a3b95049af8bc9def61b358380fbbbe1.s3tc.ctex"]
+source_file="res://art/3d assets/objects/stickerroll_water bottle stickers.png"
+dest_files=["res://.godot/imported/stickerroll_water bottle stickers.png-b63a6e5452ec300b7a7c15f92c795a39.s3tc.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

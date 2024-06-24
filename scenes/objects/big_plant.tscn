@@ -8,6 +8,8 @@ radius = 0.0675303
 
 [node name="big plant" instance=ExtResource("1_prdgg")]
 
+[node name="Plane_010" parent="." index="0" groups=["wall_2"]]
+
 [node name="Interactable_big_plant" type="Area3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_big_plant" index="0"]

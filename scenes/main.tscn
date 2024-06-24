@@ -28,12 +28,12 @@ text_speed = 0.05
 
 [node name="SFXText" type="AudioStreamPlayer" parent="DialogueLayer"]
 stream = SubResource("AudioStreamRandomizer_0kvcs")
-volume_db = -10.0
+volume_db = -20.0
 pitch_scale = 2.0
 
 [node name="SFXDialogueClose" type="AudioStreamPlayer" parent="DialogueLayer"]
 stream = ExtResource("8_axb7w")
-volume_db = -10.0
+volume_db = -20.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_o2xdv")
@@ -42,7 +42,7 @@ autoplay = true
 
 [node name="SFXInteractables" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("21_fruid")
-volume_db = -10.0
+volume_db = -20.0
 script = ExtResource("9_xl21r")
 
 [node name="World 1" parent="." instance=ExtResource("2_u14to")]
