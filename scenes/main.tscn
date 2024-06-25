@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ckhmm36sa88xv"]
+[gd_scene load_steps=13 format=3 uid="uid://ckhmm36sa88xv"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_pky4t"]
 [ext_resource type="PackedScene" uid="uid://cqjj1t48ewdp2" path="res://scenes/world_1.tscn" id="2_u14to"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://scripts/SFXInteractables.gd" id="9_xl21r"]
 [ext_resource type="AudioStream" uid="uid://bdgceweci8w3c" path="res://audio/sfx/drop_004.ogg" id="11_ccgl2"]
 [ext_resource type="AudioStream" uid="uid://c14fh5uo66548" path="res://audio/sfx/bong_001.ogg" id="19_pkkem"]
-[ext_resource type="AudioStream" uid="uid://k5t8lv2daojn" path="res://audio/sfx/maximize_008.ogg" id="21_fruid"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0kvcs"]
 random_pitch = 1.1
@@ -50,7 +49,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="SFXInteractables" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_fruid")
+stream = ExtResource("11_ccgl2")
 volume_db = -20.0
 script = ExtResource("9_xl21r")
 

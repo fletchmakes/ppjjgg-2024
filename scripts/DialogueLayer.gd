@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-signal dialogue_finished
 @onready var DialogueUI = $DialogueUI;
 @onready var DialogueText = $DialogueUI/MarginContainer/MarginContainer/RichTextLabel;
 @onready var DialogueNextIndicator = $DialogueUI/MarginContainer/AspectRatioContainer/NextArrow;
@@ -31,7 +30,6 @@ func _process(delta):
 		DialogueNextIndicator.show();
 	else:
 		DialogueNextIndicator.hide();
-		emit_signal("dialogue_finished")
 	
 	# animating the dialogue window in and out
 	if (display_state == "hiding"):

@@ -215,4 +215,8 @@ for the lack of softness in my person", #74
 #it's not like I'm gonna stop you
 #HI FLETCH!! :D
 "MY SOCK!!! OH MY GOODNESS I'VE BEEN LOOKING EVERYWHERE FOR THIS!!", #75
+
+#sticky notes interjections
+"There's another poem", #76
+"And one more", #77
 ]

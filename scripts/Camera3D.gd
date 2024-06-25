@@ -180,7 +180,7 @@ func _on_interactable_stickynotes_input_event(camera, event, position, normal, s
 		sfx_interactables.play()
 		interacted_sticky_notes  = true
 		Input.set_custom_mouse_cursor(cursor_dialogue,Input.CURSOR_ARROW,Vector2(0, 0))
-		DialogueManager.OpenDialogueAndPauseGame([51, 11, 12, 13])
+		DialogueManager.OpenDialogueAndPauseGame([51, 11, 12, 13, 76, 73, 77, 74])
 		GameManager.ResetYawnTimer()
 		GameManager.click_sticky_notes()
 

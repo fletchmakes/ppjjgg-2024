@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_fq0jm"]
 [ext_resource type="Texture2D" uid="uid://cl1pejodkacyg" path="res://art/misc/title-art.png" id="2_yh44b"]
 [ext_resource type="Theme" uid="uid://d3xosdr8aarps" path="res://themes/base_theme.tres" id="3_cmpxs"]
-[ext_resource type="AudioStream" uid="uid://bdgceweci8w3c" path="res://audio/sfx/drop_004.ogg" id="4_h211g"]
 [ext_resource type="Texture2D" uid="uid://c77bvfyp5yu05" path="res://art/ui/StartScreen.png" id="5_3l762"]
+[ext_resource type="AudioStream" uid="uid://cnvsatt32aswc" path="res://audio/sfx/drop_001.ogg" id="5_opm7e"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -83,7 +83,7 @@ fit_content = true
 autowrap_mode = 0
 
 [node name="SFXMenuButton" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_h211g")
-volume_db = -10.0
+stream = ExtResource("5_opm7e")
+volume_db = -20.0
 
 [connection signal="pressed" from="VBoxContainer/CenterContainer/PlayButton" to="." method="_on_play_button_pressed"]

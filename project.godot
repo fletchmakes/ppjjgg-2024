@@ -105,4 +105,5 @@ esc={
 
 renderer/rendering_method.mobile="forward_plus"
 renderer/rendering_method.web="forward_plus"
+textures/vram_compression/import_s3tc_bptc=true
 anti_aliasing/quality/screen_space_aa=1
