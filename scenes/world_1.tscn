@@ -134,32 +134,6 @@ texture = SubResource("ImageTexture_jfkdy")
 
 [node name="Interactable" parent="Sprite3D" instance=ExtResource("1_pmgy1")]
 
-[node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
-script = ExtResource("2_g7bt7")
-rotation_speed = 1.2
-
-[node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 40.75, 69)
-projection = 1
-fov = 17.5
-size = 5.0
-near = 0.001
-script = ExtResource("3_te4k1")
-
-[node name="EndScreen" parent="Pivot/Camera3D" instance=ExtResource("5_m0asf")]
-visible = false
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072646, 0.88908, -1.31925)
-visible = false
-light_color = Color(1, 0.952941, 0.627451, 1)
-omni_range = 0.1
-
-[node name="SFXRotateCamera" type="AudioStreamPlayer" parent="Pivot"]
-stream = ExtResource("4_crdo2")
-volume_db = -10.0
-
 [node name="CeilingLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.33293, 0)
 light_color = Color(1, 0.811765, 0.654902, 1)
@@ -442,6 +416,32 @@ transform = Transform3D(-0.858074, 7.50152e-08, 0.513526, -8.74228e-08, -1, 0, 0
 stream = ExtResource("4_crdo2")
 volume_db = -10.0
 
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+script = ExtResource("2_g7bt7")
+rotation_speed = 1.2
+
+[node name="Camera3D" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 40.75, 69)
+projection = 1
+fov = 17.5
+size = 5.0
+near = 0.001
+script = ExtResource("3_te4k1")
+
+[node name="EndScreen" parent="Pivot/Camera3D" instance=ExtResource("5_m0asf")]
+visible = false
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072646, 0.88908, -1.31925)
+visible = false
+light_color = Color(1, 0.952941, 0.627451, 1)
+omni_range = 0.1
+
+[node name="SFXRotateCamera" type="AudioStreamPlayer" parent="Pivot"]
+stream = ExtResource("4_crdo2")
+volume_db = -10.0
+
 [connection signal="input_event" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_input_event"]
 [connection signal="mouse_entered" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite3D/Interactable" to="Pivot/Camera3D" method="_on_interactable_mouse_exited"]
@@ -511,7 +511,6 @@ volume_db = -10.0
 [connection signal="input_event" from="Environment/sock/Interactable_sock" to="Pivot/Camera3D" method="_on_interactable_sock_input_event"]
 
 [editable path="Sprite3D/Interactable"]
-[editable path="Pivot/Camera3D/EndScreen"]
 [editable path="Environment/room-colour4"]
 [editable path="Environment/room-colour4/wall3-bybed"]
 [editable path="Environment/room-colour4/wall4"]
@@ -526,3 +525,4 @@ volume_db = -10.0
 [editable path="Environment/Interactables/bin with paper"]
 [editable path="Environment/Interactables/sticker sheets"]
 [editable path="Environment/sock"]
+[editable path="Pivot/Camera3D/EndScreen"]
